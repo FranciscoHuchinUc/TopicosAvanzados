@@ -1,4 +1,4 @@
-//package ejercicios.ejercicio1;
+package ejercicios.ejercicio2;
 
 import java.awt.Frame;
 import java.awt.*;
