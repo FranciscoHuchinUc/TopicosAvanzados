@@ -25,6 +25,7 @@ public class Pantalla extends Frame implements MouseListener {
         // Final de Ventana, Tamaño y Visibilidad
         this.setSize(500, 500);
         this.setVisible(true);
+        
     }
 
     public static void main(String[] args) {
