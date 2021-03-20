@@ -98,7 +98,7 @@ public class VentanaCListener extends Frame implements ActionListener {
     TextField txt_in;
     Label lbl_msg;
     TextArea txt_result;
-
+    
     ArrayList<Integer> array;
 
 }
