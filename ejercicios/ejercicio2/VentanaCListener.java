@@ -4,6 +4,7 @@ import java.awt.Frame;
 import java.awt.*;
 import java.awt.Button;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class VentanaCListener extends Frame implements ActionListener {
 
@@ -46,6 +47,9 @@ public class VentanaCListener extends Frame implements ActionListener {
         btn_clear.addActionListener(this);
         btn_clear.setFocusable(false);
         this.add(btn_clear, BorderLayout.WEST);
+
+        array = new ArrayList<>();
+
     }
 
     public static void main(String args[]) {
@@ -60,8 +64,25 @@ public class VentanaCListener extends Frame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btn_Click) {
-            String text = txt_in.getText();
-            txt_result.append(text + "\n");
+            String texto = txt_in.getText();
+            if (texto.equals("SUMAR")) { 
+                if (array.size() > 0) {
+                    Integer i = 0;
+                    for(Integer n: array) {
+                        i = i + n;
+                    }
+                    texto = txt_in.getText() + (" " + i.toString());
+                }
+            } else {
+                try{
+                    Integer i = Integer.parseInt(texto);
+                    array.add(i);
+                    }catch(Exception ex) {
+
+                    }
+            }
+            
+            txt_result.append(texto + "\n");
         }
         if (e.getSource() == btn_clear) {
             txt_result.setText("");
@@ -70,12 +91,14 @@ public class VentanaCListener extends Frame implements ActionListener {
     }
 
     /**
-     * Creacion de los Widget
+     * Creacion de los Componentes
      */
     Button btn_Click;
     Button btn_clear;
     TextField txt_in;
     Label lbl_msg;
     TextArea txt_result;
+
+    ArrayList<Integer> array;
 
 }
