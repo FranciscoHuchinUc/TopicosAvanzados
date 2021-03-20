@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class VentanaCListener extends Frame implements ActionListener {
 
     /**
-     * Autor Francisco Huchin
+     * @Autor Francisco Huchin
      */
     private static final long serialVersionUID = 284453842348034814L;
 
