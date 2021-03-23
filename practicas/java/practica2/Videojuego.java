@@ -17,7 +17,6 @@ public class Videojuego extends JFrame {
         //this.setLayout(new BorderLayout());
 
         circulo = new Circulo();
-        this.add(circulo);
 
         btnCirculo = new JButton("Circulo");
         btnCirculo.setFocusable(false);
@@ -34,15 +33,11 @@ public class Videojuego extends JFrame {
 
         contDibujo = new JPanel();
 
-        contOpciones = new JPanel();
-        contOpciones.setBackground(Color.CYAN);
-        contOpciones.setPreferredSize(new Dimension(150,500));
-        contOpciones.add(circulo);
-        contOpciones.add(btnCuadrado);
 
-        //this.add(barraBoton, BorderLayout.NORTH);
-        //this.add(contDibujo, BorderLayout.CENTER);
-        //this.add(contOpciones, BorderLayout.EAST);
+
+        this.add(barraBoton, BorderLayout.NORTH);
+        this.add(contDibujo, BorderLayout.CENTER);
+        this.add(circulo, BorderLayout.EAST);
 
         //Personalizacion de la ventana
         this.setSize(500, 500);
