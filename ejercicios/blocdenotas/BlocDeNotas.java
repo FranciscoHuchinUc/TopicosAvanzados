@@ -211,6 +211,7 @@ public class BlocDeNotas extends JFrame implements ActionListener {
         });
     }
 
+    // Variables declaration
     JPanel barraMenu;
     JPanel contenedorTexto;
     JPanel barraEstado;
@@ -223,5 +224,6 @@ public class BlocDeNotas extends JFrame implements ActionListener {
     JTextArea txtBlocNotas;
     JLabel txtEstado;
     File archivo;
+    // End of variables declaration
 
 }
