@@ -1,3 +1,5 @@
+package practica1;
+
 public class OperacionesCalculadora {
 
     public String opResultado(String operador, int pNum, int sNum) {
