@@ -1,9 +1,8 @@
 package practica2;
 
 import java.awt.*;
-import javax.swing.*;
 
-public class Circulo extends JPanel {
+public class Circulo extends Canvas {
 
     /**
      *
@@ -12,7 +11,6 @@ public class Circulo extends JPanel {
     
 
     public void paint(Graphics g) {
-        super.paintComponent(g);
         g.setColor(Color.RED);
         g.fillRect(50, 50, 100, 100);
     }

@@ -6,17 +6,13 @@ import javax.swing.*;
 
 public class Videojuego extends JFrame {
 
-    private Circulo circulo;
-
     public Videojuego(){
         initComponets();
     }
 
     public void initComponets(){
 
-        //this.setLayout(new BorderLayout());
-
-        circulo = new Circulo();
+        this.setLayout(new BorderLayout());
 
         btnCirculo = new JButton("Circulo");
         btnCirculo.setFocusable(false);
@@ -26,18 +22,20 @@ public class Videojuego extends JFrame {
         btnCuadrado = new JButton("Cuadrado");
         btnCuadrado.setFocusable(false);
         btnCuadrado.setFont(new Font("Open Sans", 0, 14));
-        btnCuadrado.setPreferredSize(new Dimension(90,30));
+        btnCuadrado.setPreferredSize(new Dimension(110,30));
+
+        btnRombo = new JButton("Rombo");
+        btnRombo.setFocusable(false);
+        btnRombo.setFont(new Font("Open Sans", 0, 14));
+        btnRombo.setPreferredSize(new Dimension(90,30));
 
         barraBoton = new JPanel();
         barraBoton.add(btnCirculo);
+        barraBoton.add(btnCuadrado);
+        barraBoton.add(btnRombo);
 
-        contDibujo = new JPanel();
-
-
-
-        this.add(barraBoton, BorderLayout.NORTH);
+        this.add(barraBoton, BorderLayout.EAST);
         this.add(contDibujo, BorderLayout.CENTER);
-        this.add(circulo, BorderLayout.EAST);
 
         //Personalizacion de la ventana
         this.setSize(500, 500);
