@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class VentanaCListener extends Frame implements ActionListener {
 
     /**
-     * Autor Francisco Huchin
+     * @Autor Francisco Huchin
      */
     private static final long serialVersionUID = 284453842348034814L;
 
@@ -98,7 +98,7 @@ public class VentanaCListener extends Frame implements ActionListener {
     TextField txt_in;
     Label lbl_msg;
     TextArea txt_result;
-
+    
     ArrayList<Integer> array;
 
 }

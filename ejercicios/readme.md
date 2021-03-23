@@ -16,7 +16,7 @@ Hacer uso de contenedores y Layouts para la organizacion de los widgets
 
 ## Ejercicio 5
 
-Utilizando cancas, realizar una figura de tu preferencia y dibujarla en una ventana, aplicar el MouseListener realizar acciones para que se dibuje en diferentes areas de la ventana
+Utilizando canvas, realizar una figura de tu preferencia y dibujarla en una ventana, aplicar el MouseListener realizar acciones para que se dibuje en diferentes areas de la ventana
 
 ## Ejercicio 6
 
@@ -24,4 +24,4 @@ Utilizar el Contenedor del ejercio 5 implementar los Listeners de Motion y Key d
 
 ## Ejercicio 7
 
-Escrinir un programa que implemente el juego de Snake (La culebrita), dibujando circulo como manzanas e la pantalla y un cuadro con un ojo para la culebra, Mueve la culebra con le teclado usando o las flechas de direccion o las letras WASD
+Escribir un programa que implemente el juego de Snake (La culebrita), dibujando circulo como manzanas e la pantalla y un cuadro con un ojo para la culebra, Mueve la culebra con le teclado usando o las flechas de direccion o las letras WASD

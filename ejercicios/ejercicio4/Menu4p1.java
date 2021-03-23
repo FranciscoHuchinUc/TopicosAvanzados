@@ -20,6 +20,7 @@ public class Menu4p1 extends Frame implements ActionListener {
     }
 
     public void initComponet() {
+        
         this.setLayout(new GridLayout(3, 3));
 
         btn_aceptar = new Button("Aceptar");
