@@ -1,10 +1,7 @@
 import java.awt.*;
 
 public class SpritePlayer extends Canvas {
-
-    /**
-     *
-     */
+    
     private static final long serialVersionUID = 1L;
     /**
      * @FranciscoHuchinUc
