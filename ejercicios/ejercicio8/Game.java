@@ -23,7 +23,7 @@ public class Game extends Frame implements KeyListener{
         this.add(sprite);
 
         // Final de Ventana, Tamaño y Visibilidad
-        this.setSize(500, 500);
+        this.setSize(1024, 500);
         this.setVisible(true);
     }
 
@@ -42,18 +42,12 @@ public class Game extends Frame implements KeyListener{
             case 'd':
             case 'D':
                 sprite.setX(sprite.getX() + 3);
+                sprite.tick();
                 break;
             case 'a':
             case 'A':
                 sprite.setX(sprite.getX() - 3);
-                break;
-            case 'w':
-            case 'W':
-                sprite.setY(sprite.getY() - 3);
-                break;
-            case 's':
-            case 'S':
-                sprite.setY(sprite.getY() + 3);
+                sprite.tick();
                 break;
             default:
                 break;
