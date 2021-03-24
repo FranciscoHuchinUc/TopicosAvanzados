@@ -25,3 +25,7 @@ Utilizar el Contenedor del ejercio 5 implementar los Listeners de Motion y Key d
 ## Ejercicio 7
 
 Escribir un programa que implemente el juego de Snake (La culebrita), dibujando circulo como manzanas e la pantalla y un cuadro con un ojo para la culebra, Mueve la culebra con le teclado usando o las flechas de direccion o las letras WASD
+
+## Ejercicio 8
+
+Uso de Sprites para animacion. Descaregar un Sprite del internet y armar un juego simple

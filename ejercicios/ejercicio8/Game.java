@@ -1,25 +1,23 @@
-ackage ejercicios.ejercicio7;
 
 import java.awt.*;
 import java.awt.event.*;
 
-public class Snake extends Frame implements KeyListener{
+public class Game extends Frame implements KeyListener{
 
     /**
      *
      */
     private static final long serialVersionUID = 1L;
+    
+    SpritePlayer sprite;
 
-    private SpritePlayer sprite;
-
-    public Snake() {
+    public Game() {
         initComponets();
     }
 
     public void initComponets() {
 
         sprite = new SpritePlayer();
-        
         sprite.addKeyListener(this);
         this.addKeyListener(this);
         this.add(sprite);
@@ -30,24 +28,20 @@ public class Snake extends Frame implements KeyListener{
     }
 
     public static void main(String[] args) {
-        Snake s = new Snake();
-        s.addWindowListener(new WindowAdapter() {
+        Game game = new Game();
+        game.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
             }
         });
     }
 
-
     @Override
     public void keyPressed(KeyEvent e) {
-        
-        System.out.println("Presionando " + e.getKeyChar());
         switch(e.getKeyChar()) {
             case 'd':
             case 'D':
                 sprite.setX(sprite.getX() + 3);
-
                 break;
             case 'a':
             case 'A':
@@ -56,19 +50,16 @@ public class Snake extends Frame implements KeyListener{
             case 'w':
             case 'W':
                 sprite.setY(sprite.getY() - 3);
-
                 break;
             case 's':
             case 'S':
                 sprite.setY(sprite.getY() + 3);
                 break;
-
-                default:
+            default:
                 break;
 
         }
         sprite.repaint();
-
     }
 
     @Override
@@ -82,6 +73,5 @@ public class Snake extends Frame implements KeyListener{
         // TODO Auto-generated method stub
         
     }
-
 
 }
