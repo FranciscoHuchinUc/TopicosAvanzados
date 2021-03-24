@@ -1,4 +1,3 @@
-package ejercicios.ejercicio7;
 
 import java.awt.*;
 import java.util.Random;
