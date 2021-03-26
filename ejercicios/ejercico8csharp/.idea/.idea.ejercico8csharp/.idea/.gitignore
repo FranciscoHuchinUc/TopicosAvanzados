@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/projectSettingsUpdater.xml
+/modules.xml
+/.idea.ejercico8csharp.iml
+# Datasource local storage ignored files
+/../../../../../../../../../:\Developer\Repositorio\TopicosAvanzados\ejercicios\ejercico8csharp\.idea\.idea.ejercico8csharp\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
