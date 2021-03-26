@@ -9,27 +9,25 @@ public class Game extends Frame implements KeyListener{
      */
     private static final long serialVersionUID = 1L;
     
-    SpritePlayer sprite;
+    SpritePlayer obj_pintable;
 
     public Game() {
-        initComponets();
+        initComponents();
     }
 
-    public void initComponets() {
-
-        sprite = new SpritePlayer();
-        sprite.addKeyListener(this);
+    public void initComponents() {
+        obj_pintable = new SpritePlayer();
+        obj_pintable.addKeyListener(this);
         this.addKeyListener(this);
-        this.add(sprite);
+        this.add(obj_pintable);
 
-        // Final de Ventana, Tamaño y Visibilidad
-        this.setSize(1024, 500);
+        this.setSize(1024,500);
         this.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        Game game = new Game();
-        game.addWindowListener(new WindowAdapter() {
+    public static void main(String args[]) {
+        Game g = new Game();
+        g.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
             }
@@ -37,35 +35,44 @@ public class Game extends Frame implements KeyListener{
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {
-        switch(e.getKeyChar()) {
-            case 'd':
-            case 'D':
-                sprite.setX(sprite.getX() + 3);
-                sprite.tick();
-                break;
-            case 'a':
-            case 'A':
-                sprite.setX(sprite.getX() - 3);
-                sprite.tick();
-                break;
-            default:
-                break;
+    public void keyPressed(KeyEvent arg0) {
+        System.out.println("Presionando " + arg0.getKeyChar());
+        if (!obj_pintable.isClicked()) {
+            switch(arg0.getKeyChar()) {
+                case 'd':
+                case 'D':
+                    obj_pintable.setX(obj_pintable.getX() + 1);
+                    obj_pintable.tick();
+                    break;
+                case 'a':
+                case 'A':
+                    obj_pintable.setX(obj_pintable.getX() - 1);
+                    obj_pintable.tick();
+                    break;
+                case 'w':
+                case 'W':
+                    obj_pintable.setY(obj_pintable.getY() - 1);
 
+                    break;
+                case 's':
+                case 'S':
+                    obj_pintable.setY(obj_pintable.getY() + 1);
+                    break;
+                default:
+                break;
+            }
+            obj_pintable.repaint();
         }
-        sprite.repaint();
     }
 
     @Override
-    public void keyTyped(KeyEvent e) {
-        // TODO Auto-generated method stub
-        
+    public void keyReleased(KeyEvent arg0) {
+        System.out.println("Liberando " + arg0.getKeyChar());
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {
-        // TODO Auto-generated method stub
-        
+    public void keyTyped(KeyEvent arg0) {
+        System.out.println("Tecleada: " + arg0.getKeyChar());
     }
 
 }

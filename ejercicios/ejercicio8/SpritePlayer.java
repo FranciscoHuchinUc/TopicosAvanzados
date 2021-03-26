@@ -18,36 +18,46 @@ public class SpritePlayer extends Canvas {
         x = 30;
         y = 30;
         isClicked = false;
-        buffer = createImage(1024, 500);
-        images = new Image[3];
-        String pathImage = "ejercicios/ejercicio8/recursos/1.png";
+        
+        images = new Image[4];
+        String pathImage = "recursos/bg.jpg";
         imagen = Toolkit.getDefaultToolkit().getImage(pathImage);
         this.t = 0;
-        for (int i = 0; i < 3; i++) {
-            images[i+1] = Toolkit.getDefaultToolkit().getImage("ejercicios/ejercicio8/recursos/" + i + ".png");
+        for(int i=1;i <= 4; i++) {
+            images[i-1] = Toolkit.getDefaultToolkit().getImage("recursos/" + i + ".png");
         }
     }
 
     public void paint(Graphics g) {
         Graphics2D g2d = (Graphics2D)g;
+        buffer = createImage(1024,500);
         Graphics miG = buffer.getGraphics();
-        miG.setColor(Color.BLACK);
-        miG.fillRect(0,0,1024,500);
-        miG.drawImage(images[this.t], x, y, this);
+        miG.setColor(Color.white);
+        miG.fillRect(0,0, 1024, 500);
+        miG.drawImage(imagen, 0, 0, 1024,400, this);
+        miG.drawImage(images[this.t], x, y+100, this);
         g2d.drawImage(buffer, 0, 0, this);
     }
 
     public void tick() {
         this.t++;
-        if (t > images.length) this.t = 1;
+        if(t>=images.length) this.t=0;
     }
 
-    public int setX(int x) {
-        return this.x = x;
+    public int getX() {
+        return x;
     }
 
-    public int setY(int y) {
-        return this.y = y;
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 
     public boolean isClicked() {
