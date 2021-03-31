@@ -2,7 +2,7 @@ package practica2;
 
 import java.awt.*;
 
-public class Circulo extends Canvas {
+public class Figura extends Canvas {
 
     /**
      *
