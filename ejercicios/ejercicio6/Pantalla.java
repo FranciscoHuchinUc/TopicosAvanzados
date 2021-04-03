@@ -1,4 +1,4 @@
-package ejercicios.ejercicio6;
+//package ejercicios.ejercicio6;
 
 import ejercicios.ejercicio5.*;
 
