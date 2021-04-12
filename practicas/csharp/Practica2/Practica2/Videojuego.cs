@@ -125,6 +125,36 @@ namespace Practica2
                 paintContainer.Invalidate();
             }
         }
+        
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (getClicked())
+            {
+                switch (e.KeyChar.ToString())
+                {
+                    case "a": 
+                    case "A":
+                        btnCirculo.PerformClick();
+                        break;
+                    case "s":
+                    case "S":
+                        btnCuadrado.PerformClick();
+                        break;
+                    case "d":
+                    case "D":
+                        btnArco.PerformClick();
+                        break;
+                    case "c": 
+                    case "C":
+                        btnColor.PerformClick();
+                        break;
+                    case "t":
+                    case "T":
+                        btnTamanio.PerformClick();
+                        break;
+                }
+            }
+        }
 
         // Metodos
         public void cambiarColor(int c) {
@@ -214,39 +244,5 @@ namespace Practica2
             this.color = color;
         }
         // End of Getters and Setters
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (getClicked())
-            {
-                switch (e.KeyChar.ToString())
-                {
-                    case "a": 
-                    case "A":
-                        btnCirculo.PerformClick();
-                        Console.WriteLine(e.KeyChar.ToString());
-                        break;
-                    case "s":
-                    case "S":
-                        btnCuadrado.PerformClick();
-                        Console.WriteLine(e.KeyChar.ToString());
-                        break;
-                    case "d":
-                    case "D":
-                        btnArco.PerformClick();
-                        Console.WriteLine(e.KeyChar.ToString());
-                        break;
-                    case "c": 
-                    case "C":
-                        btnColor.PerformClick();
-                        Console.WriteLine(e.KeyChar.ToString());
-                        break;
-                    case "t":
-                    case "T":
-                        btnTamanio.PerformClick();
-                        Console.WriteLine(e.KeyChar.ToString());
-                        break;
-                }
-            }
-        }
     }
 }
