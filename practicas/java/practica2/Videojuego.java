@@ -4,11 +4,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+/**
+ *
+ * @author Francisco Huchin
+ */
 public class Videojuego extends JFrame {
 
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
 
     public Videojuego() {
@@ -36,11 +37,23 @@ public class Videojuego extends JFrame {
         btnCuadrado.setPreferredSize(new Dimension(120, 30));
         btnCuadrado.addActionListener(e -> btnCuadradoActionPerformed(e));
 
-        btnRombo = new JButton("Rombo (d)");
-        btnRombo.setFocusable(false);
-        btnRombo.setFont(new Font("Open Sans", 0, 14));
-        btnRombo.setPreferredSize(new Dimension(110, 30));
-        btnRombo.addActionListener(e -> btnRomboActionPerformed(e));
+        btnArco = new JButton("Arco (d)");
+        btnArco.setFocusable(false);
+        btnArco.setFont(new Font("Open Sans", 0, 14));
+        btnArco.setPreferredSize(new Dimension(110, 30));
+        btnArco.addActionListener(e -> btnRomboActionPerformed(e));
+
+        btnColor = new JButton("Color (c)");
+        btnColor.setFocusable(false);
+        btnColor.setFont(new Font("Open Sans", 0, 14));
+        btnColor.setPreferredSize(new Dimension(120, 30));
+        btnColor.addActionListener(e -> btnColorActionPerformed(e));
+
+        btnTamanio = new JButton("Tamaño (t)");
+        btnTamanio.setFocusable(false);
+        btnTamanio.setFont(new Font("Open Sans", 0, 14));
+        btnTamanio.setPreferredSize(new Dimension(120, 30));
+        btnTamanio.addActionListener(e -> btnTamanioActionPerformed(e));
 
         iconCircle = new JLabel();
         iconCircle.setIcon(new ImageIcon(getClass().getResource("/practica2/img/imgCircle.png")));
@@ -58,7 +71,9 @@ public class Videojuego extends JFrame {
         barraBoton.setBackground(new Color(216, 241, 255));
         barraBoton.add(btnCirculo);
         barraBoton.add(btnCuadrado);
-        barraBoton.add(btnRombo);
+        barraBoton.add(btnArco);
+        barraBoton.add(btnColor);
+        barraBoton.add(btnTamanio);
 
         scrollPane = new JScrollPane();
         scrollPane.setBorder(null);
@@ -94,8 +109,8 @@ public class Videojuego extends JFrame {
         this.add(scrollPane, BorderLayout.EAST);
         this.add(paintContainer, BorderLayout.CENTER);
 
-        //Personalizacion de la ventana
-        this.setSize(500, 500);
+        // Personalizacion de la ventana
+        this.setSize(800, 500);
         this.setLocationRelativeTo(null);
         //this.setResizable(false);
         this.setVisible(true);
@@ -120,10 +135,33 @@ public class Videojuego extends JFrame {
         paintContainer.setIsFigura("Cuadrado");
         JOptionPane.showMessageDialog(null, "Cuadrado");
     }
-    
+
     private void btnRomboActionPerformed(ActionEvent e) {
-        paintContainer.setIsFigura("Rombo");
-        JOptionPane.showMessageDialog(null, "Rombo");
+        paintContainer.setIsFigura("Arco");
+        JOptionPane.showMessageDialog(null, "Arco");
+    }
+
+    private void btnColorActionPerformed(ActionEvent e) {
+        try {
+            int c = Integer.parseInt(JOptionPane.showInputDialog(null,
+                    "Elija su Color Segun El Numero\n" + "0 - Black\n" + "1 - Blue\n" + "2 - Red\n" + "3 - Cyan\n"
+                    + "4 - Gray\n" + "5 - Green\n" + "6 - Yellow\n"));
+            cambiarColor(c);
+            paintContainer.repaint();
+        } catch (Exception exc) {
+            System.out.println(exc);
+        }
+    }
+
+    private void btnTamanioActionPerformed(ActionEvent e) {
+        try {
+            int t = Integer.parseInt(JOptionPane.showInputDialog(null, "Dijite el Tamaño"));
+            paintContainer.setH(t);
+            paintContainer.setW(t);
+            paintContainer.repaint();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
 
     private void paintContainerMouseClicked(MouseEvent e) {
@@ -153,7 +191,15 @@ public class Videojuego extends JFrame {
                     break;
                 case 'd':
                 case 'D':
-                    btnRombo.doClick();
+                    btnArco.doClick();
+                    break;
+                case 'c':
+                case 'C':
+                    btnColor.doClick();
+                    break;
+                case 't':
+                case 'T':
+                    btnTamanio.doClick();
                     break;
                 default:
                     break;
@@ -161,10 +207,41 @@ public class Videojuego extends JFrame {
         }
     }
 
+    public void cambiarColor(int c) {
+        switch (c) {
+            case 0:
+                paintContainer.setColor(Color.BLACK);
+                break;
+            case 1:
+                paintContainer.setColor(Color.BLUE);
+                break;
+            case 2:
+                paintContainer.setColor(Color.RED);
+                break;
+            case 3:
+                paintContainer.setColor(Color.CYAN);
+                break;
+            case 4:
+                paintContainer.setColor(Color.GRAY);
+                break;
+            case 5:
+                paintContainer.setColor(Color.GREEN);
+                break;
+            case 6:
+                paintContainer.setColor(Color.YELLOW);
+                break;
+            default:
+                paintContainer.setColor(new Color(0, 132, 246));
+                break;
+        }
+    }
+
     // Variables declaration
     JButton btnCirculo;
     JButton btnCuadrado;
-    JButton btnRombo;
+    JButton btnArco;
+    JButton btnColor;
+    JButton btnTamanio;
     JLabel iconCircle;
     JLabel iconSquare;
     JLabel iconRectangle;

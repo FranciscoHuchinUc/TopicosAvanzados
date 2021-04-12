@@ -1,50 +1,50 @@
 package practica2;
 
 import java.awt.*;
-import javax.swing.*;
 
 /**
  *
  * @author Francisco Huchin
  */
-public class Paint extends JPanel {
+public class Paint extends Canvas {
+    
+    private static final long serialVersionUID = 1L;
 
     private int x, y;
     private int w, h;
     private String isFigura;
     boolean isClicked;
+    Color color;
 
     public Paint() {
         x = y = 50;
         w = h = 100;
+        color = new Color(0, 132, 246);
     }
 
     @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
+    public void paint(Graphics g) {
+        super.paint(g);
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, this.getWidth(), this.getHeight());
         try {
             switch (isFigura) {
                 case "Circulo":
-                    g.setColor(Color.red);
-                    g.fillOval(x, y, w, h);
+                    g2d.setColor(color);
+                    g2d.fillOval(x, y, w, h);
                     break;
                 case "Cuadrado":
-                    g.setColor(Color.orange);
-                    g.fillRect(x, y, w, h);
+                    g2d.setColor(color);
+                    g2d.fillRect(x, y, w, h);
                     break;
-                case "Rombo":
-                    g.setColor(Color.pink);
-                    g.fillArc(x, y, w, h, 60, 90);
+                case "Arco":
+                    g2d.setColor(color);
+                    g2d.fillArc(x, y, w, h, 60, 90);
                     break;
             }
         } catch (Exception e) {
         }
-    }
-
-    @Override
-    public void update(Graphics g) {
-        super.update(g);
-        paintComponent(g);
     }
 
     public int getX() {
@@ -61,10 +61,6 @@ public class Paint extends JPanel {
 
     public void setY(int y) {
         this.y = y;
-    }
-
-    public Paint(LayoutManager layout) {
-        super(layout);
     }
 
     public int getW() {
@@ -98,4 +94,13 @@ public class Paint extends JPanel {
     public void setClicked() {
         this.isClicked = !this.isClicked;
     }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+    
 }
