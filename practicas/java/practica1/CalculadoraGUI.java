@@ -31,11 +31,6 @@ public class CalculadoraGUI extends JFrame {
         txtResultado.setForeground(new Color(51, 51, 51));
         txtResultado.setText("0123456789");
         txtResultado.setPreferredSize(new Dimension(430, 30));
-        txtResultado.addKeyListener(new KeyAdapter() {
-            public void keyTyped(KeyEvent evt){
-                txtResultadokeyTyped(evt);
-            }
-        });
 
         btnC = new JButton("C");
         btnC.setFocusable(false);
@@ -164,42 +159,52 @@ public class CalculadoraGUI extends JFrame {
 
     private void btnUnoActionPerformed(ActionEvent e){
         txtResultado.setText(txtResultado.getText() + btnUno.getText());
+        validarRango();
     }
 
     private void btnDosActionPerformed(ActionEvent e){
         txtResultado.setText(txtResultado.getText() + btnDos.getText());
+        validarRango();
     }
 
     private void btnTresActionPerformed(ActionEvent e){
         txtResultado.setText(txtResultado.getText() + btnTres.getText());
+        validarRango();
     }
 
     private void btnCuatrosActionPerformed(ActionEvent e){
         txtResultado.setText(txtResultado.getText() + btnCuatro.getText());
+        validarRango();
     }
 
     private void btnCincoActionPerformed(ActionEvent e){
         txtResultado.setText(txtResultado.getText() + btnCinco.getText());
+        validarRango();
     }
 
     private void btnSeisActionPerformed(ActionEvent e){
         txtResultado.setText(txtResultado.getText() + btnSeis.getText());
+        validarRango();
     }
 
     private void btnSieteActionPerformed(ActionEvent e){
         txtResultado.setText(txtResultado.getText() + btnSiete.getText());
+        validarRango();
     }
 
     private void btnOchoActionPerformed(ActionEvent e){
         txtResultado.setText(txtResultado.getText() + btnOcho.getText());
+        validarRango();
     }
 
     private void btnNueveActionPerformed(ActionEvent e){
         txtResultado.setText(txtResultado.getText() + btnNueve.getText());
+        validarRango();
     }
 
     private void btnCeroActionPerformed(ActionEvent e){
         txtResultado.setText(txtResultado.getText() + btnCero.getText());
+        validarRango();
     }
 
     private void btnSumaActionPerformed(ActionEvent e){
@@ -237,10 +242,10 @@ public class CalculadoraGUI extends JFrame {
         txtResultado.setText(op.opResultado(operador, primerNumero, segundoNumero));
     }
 
-    private void txtResultadokeyTyped(KeyEvent evt){
-        if(txtResultado.getText().length() <= 20){
-            //evt.consume();
-            txtResultado.setText("Desbordamineto");
+    private void validarRango(){
+        if(txtResultado.getText().length() > 20) {
+            JOptionPane.showMessageDialog(null, "Desbordamiento");
+            btnC.doClick();
         }
     }
 
