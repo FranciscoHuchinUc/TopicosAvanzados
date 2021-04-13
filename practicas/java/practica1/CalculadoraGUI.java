@@ -32,6 +32,22 @@ public class CalculadoraGUI extends JFrame {
         txtResultado.setText("0123456789");
         txtResultado.setPreferredSize(new Dimension(430, 30));
 
+        C1 = new JLabel("C1");
+        C1.setFont(new Font("Open Sans", 1, 14));
+        C1.setHorizontalAlignment(SwingConstants.CENTER);
+
+        C2 = new JLabel("C2");
+        C2.setFont(new Font("Open Sans", 1, 14));
+        C2.setHorizontalAlignment(SwingConstants.CENTER);
+
+        C3 = new JLabel("C3");
+        C3.setFont(new Font("Open Sans", 1, 14));
+        C3.setHorizontalAlignment(SwingConstants.CENTER);
+
+        Op = new JLabel("OP");
+        Op.setFont(new Font("Open Sans", 1, 14));
+        Op.setHorizontalAlignment(SwingConstants.CENTER);
+
         btnC = new JButton("C");
         btnC.setFocusable(false);
         btnC.setFont(new Font("Open Sans", 1, 16));
@@ -124,7 +140,11 @@ public class CalculadoraGUI extends JFrame {
         
         
         contenedorNumeros = new JPanel();
-        contenedorNumeros.setLayout(new GridLayout(4,4, 20, 20));
+        contenedorNumeros.setLayout(new GridLayout(5,4, 20, 20));
+        contenedorNumeros.add(C1);
+        contenedorNumeros.add(C2);
+        contenedorNumeros.add(C3);
+        contenedorNumeros.add(Op);
         contenedorNumeros.add(btnUno);
         contenedorNumeros.add(btnDos);
         contenedorNumeros.add(btnTres);
@@ -260,6 +280,10 @@ public class CalculadoraGUI extends JFrame {
 
     // Variables declaration
     JTextField txtResultado;
+    JLabel C1;
+    JLabel C2;
+    JLabel C3;
+    JLabel Op;
     JButton btnC;
     JButton btnUno;
     JButton btnDos;
