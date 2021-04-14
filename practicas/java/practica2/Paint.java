@@ -7,7 +7,7 @@ import java.awt.*;
  * @author Francisco Huchin
  */
 public class Paint extends Canvas {
-    
+
     private static final long serialVersionUID = 1L;
 
     private int x, y;
@@ -15,33 +15,34 @@ public class Paint extends Canvas {
     private String isFigura;
     boolean isClicked;
     Color color;
+    Image imagen;
 
     public Paint() {
         x = y = 50;
         w = h = 100;
-        color = new Color(0, 132, 246);
+        color = Color.WHITE;
     }
 
     @Override
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.WHITE);
-        g.fillRect(0, 0, this.getWidth(), this.getHeight());
+        g.setColor(Color.RED);
+        g.fillRect(0, 0, this.getWidth(), this.getHeight());;
         try {
             switch (isFigura) {
-                case "Circulo":
-                    g2d.setColor(color);
-                    g2d.fillOval(x, y, w, h);
-                    break;
-                case "Cuadrado":
-                    g2d.setColor(color);
-                    g2d.fillRect(x, y, w, h);
-                    break;
-                case "Arco":
-                    g2d.setColor(color);
-                    g2d.fillArc(x, y, w, h, 60, 90);
-                    break;
+            case "Circulo":
+                g2d.setColor(color);
+                g2d.fillOval(x, y, w, h);
+                break;
+            case "Cuadrado":
+                g2d.setColor(color);
+                g2d.fillRect(x, y, w, h);
+                break;
+            case "Arco":
+                g2d.setColor(color);
+                g2d.fillArc(x, y, w, h, 60, 90);
+                break;
             }
         } catch (Exception e) {
         }
@@ -102,5 +103,5 @@ public class Paint extends Canvas {
     public void setColor(Color color) {
         this.color = color;
     }
-    
+
 }

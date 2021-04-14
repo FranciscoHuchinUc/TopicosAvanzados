@@ -112,7 +112,7 @@ public class Videojuego extends JFrame {
         // Personalizacion de la ventana
         this.setSize(800, 500);
         this.setLocationRelativeTo(null);
-        //this.setResizable(false);
+        // this.setResizable(false);
         this.setVisible(true);
 
     }
@@ -143,9 +143,9 @@ public class Videojuego extends JFrame {
 
     private void btnColorActionPerformed(ActionEvent e) {
         try {
-            int c = Integer.parseInt(JOptionPane.showInputDialog(null,
-                    "Elija su Color Segun El Numero\n" + "0 - Black\n" + "1 - Blue\n" + "2 - Red\n" + "3 - Cyan\n"
-                    + "4 - Gray\n" + "5 - Green\n" + "6 - Yellow\n"));
+            int c = Integer.parseInt(
+                    JOptionPane.showInputDialog(null, "Elija su Color Segun El Numero\n" + "0 - Black\n" + "1 - Blue\n"
+                            + "2 - White\n" + "3 - Cyan\n" + "4 - Gray\n" + "5 - Green\n" + "6 - Yellow\n"));
             cambiarColor(c);
             paintContainer.repaint();
         } catch (Exception exc) {
@@ -166,6 +166,8 @@ public class Videojuego extends JFrame {
 
     private void paintContainerMouseClicked(MouseEvent e) {
         paintContainer.setClicked();
+        paintContainer.setX(e.getX());
+        paintContainer.setY(e.getY());
         paintContainer.repaint();
     }
 
@@ -181,58 +183,58 @@ public class Videojuego extends JFrame {
     private void paintContainerKeyPressed(KeyEvent e) {
         if (!paintContainer.isClicked()) {
             switch (e.getKeyCode()) {
-                case 'a':
-                case 'A':
-                    btnCirculo.doClick();
-                    break;
-                case 's':
-                case 'S':
-                    btnCuadrado.doClick();
-                    break;
-                case 'd':
-                case 'D':
-                    btnArco.doClick();
-                    break;
-                case 'c':
-                case 'C':
-                    btnColor.doClick();
-                    break;
-                case 't':
-                case 'T':
-                    btnTamanio.doClick();
-                    break;
-                default:
-                    break;
+            case 'a':
+            case 'A':
+                btnCirculo.doClick();
+                break;
+            case 's':
+            case 'S':
+                btnCuadrado.doClick();
+                break;
+            case 'd':
+            case 'D':
+                btnArco.doClick();
+                break;
+            case 'c':
+            case 'C':
+                btnColor.doClick();
+                break;
+            case 't':
+            case 'T':
+                btnTamanio.doClick();
+                break;
+            default:
+                break;
             }
         }
     }
 
     public void cambiarColor(int c) {
         switch (c) {
-            case 0:
-                paintContainer.setColor(Color.BLACK);
-                break;
-            case 1:
-                paintContainer.setColor(Color.BLUE);
-                break;
-            case 2:
-                paintContainer.setColor(Color.RED);
-                break;
-            case 3:
-                paintContainer.setColor(Color.CYAN);
-                break;
-            case 4:
-                paintContainer.setColor(Color.GRAY);
-                break;
-            case 5:
-                paintContainer.setColor(Color.GREEN);
-                break;
-            case 6:
-                paintContainer.setColor(Color.YELLOW);
-                break;
-            default:
-                paintContainer.setColor(new Color(0, 132, 246));
-                break;
+        case 0:
+            paintContainer.setColor(Color.BLACK);
+            break;
+        case 1:
+            paintContainer.setColor(Color.BLUE);
+            break;
+        case 2:
+            paintContainer.setColor(Color.WHITE);
+            break;
+        case 3:
+            paintContainer.setColor(Color.CYAN);
+            break;
+        case 4:
+            paintContainer.setColor(Color.GRAY);
+            break;
+        case 5:
+            paintContainer.setColor(Color.GREEN);
+            break;
+        case 6:
+            paintContainer.setColor(Color.YELLOW);
+            break;
+        default:
+            paintContainer.setColor(new Color(0, 132, 246));
+            break;
         }
     }
 
