@@ -2,16 +2,18 @@ package practica3.docprincipal;
 
 import java.io.*;
 import java.net.*;
+import org.jsoup.nodes.Document;
+import org.jsoup.Jsoup;
 
 public class DocumentoPrincipal {
-    public String principal(String host) {
+    public static Document getHTML(String host) {
+        Document html = null;
+
         try {
-            Socket socket = new Socket(host, 80);
-            InputStream input = socket.getInputStream();
-            return input + "";
+            html = Jsoup.connect(host).get();
         } catch (Exception e) {
-            System.out.println("Error " + e.getMessage());
+            System.out.print("Error al obtener HTML");
         }
-        return null;
+        return html;
     }
 }

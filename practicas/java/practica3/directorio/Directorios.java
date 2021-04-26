@@ -17,8 +17,6 @@ public class Directorios {
 
     public String[] directoriosExtistentes(String host) {
         try {
-            String url = "https://itescam.edu.mx";
-
             Document doc = Jsoup.connect(host).get();
             Elements imports = doc.select("a[href]");
             dirs = new String[imports.size()];
