@@ -9,7 +9,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Servidor {
-    
+
     ServerSocket server;
     BufferedReader in;
     PrintWriter out;
