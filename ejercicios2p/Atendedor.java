@@ -9,8 +9,10 @@ public class Atendedor extends Thread {
     BufferedReader in;
     PrintWriter out;
 
-    public Atendedor(Socket client) {
+    public Atendedor(Socket client) throwsIOException {
         this.c = client;
+        in = new BufferedReader(new InputStreamReader(c.getInputStream()));
+        out = new PrintWriter(c.getOutputStream());
     }
 
     @Override
