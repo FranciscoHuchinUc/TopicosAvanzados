@@ -1,15 +1,15 @@
 package ejercicios2p;
 
-import javax.swing.*;
+import java.awt.*;
 import javax.swing.*;
 
 public class User extends JFrame {
 
-    public User(){
+    public User() {
         initComponents();
     }
 
-    public void initComponents(){
+    public void initComponents() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new GridLayout());
 
@@ -17,17 +17,23 @@ public class User extends JFrame {
         imgFondo = new JLabel();
         btnAceptar = new JButton();
 
-        contPanel.setLayout(null);}
+        contPanel.setLayout(null);
 
         imgFondo.setText("Hola Mundo");
         contPanel.add(imgFondo);
-        imgFondo.setBounds(160,70,180,128);
+        imgFondo.setBounds(70, 30, 180, 128);
 
         btnAceptar.setText("Aceptar");
         contPanel.add(btnAceptar);
-        btnAceptar.setBounds(170,120,73,23);
+        btnAceptar.setBounds(170, 120, 120, 23);
 
         getContentPane().add(contPanel);
+
+        // Personalizacion de la ventana
+        this.setSize(800, 500);
+        this.setLocationRelativeTo(null);
+        // this.setResizable(false);
+        this.setVisible(true);
     }
 
     public static void main(String args[]) {
@@ -39,5 +45,5 @@ public class User extends JFrame {
     JLabel imgFondo;
     JButton btnAceptar;
     // End Variable
-    
+
 }
