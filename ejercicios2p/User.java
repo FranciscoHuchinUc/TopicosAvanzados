@@ -9,7 +9,7 @@ public class User extends JFrame {
         initComponents();
     }
 
-    public void initComponents() {
+    private void initComponents() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new GridLayout());
 
