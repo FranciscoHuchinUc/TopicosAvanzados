@@ -32,7 +32,7 @@ public class InterfaceCliente extends JFrame {
         // Personalizacion de la ventana
         this.setSize(350, 500);
         this.setLocationRelativeTo(null);
-        // this.setResizable(false);
+        this.setResizable(false);
         this.setVisible(true);
     }
 
