@@ -3,7 +3,7 @@ package ejercicios2p;
 import java.awt.*;
 import javax.swing.*;
 
-public class User extends JFrame {
+public class InterfaceCliente extends JFrame {
 
     public User() {
         initComponents();
@@ -30,14 +30,14 @@ public class User extends JFrame {
         getContentPane().add(contPanel);
 
         // Personalizacion de la ventana
-        this.setSize(800, 500);
+        this.setSize(350, 500);
         this.setLocationRelativeTo(null);
         // this.setResizable(false);
         this.setVisible(true);
     }
 
     public static void main(String args[]) {
-        User user = new User();
+        InterfaceCliente user = new InterfaceCliente();
     }
 
     // Variable
