@@ -1,4 +1,5 @@
-package practica1;
+package practicas.java.practica1;
+
 
 public class OperacionesCalculadora {
 

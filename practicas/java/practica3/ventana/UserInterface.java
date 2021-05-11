@@ -1,13 +1,14 @@
-package parctica3.ventana;
+package practicas.java.practica3.ventana;
 
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
-import parctica3.directorio.Directorios;
-import parctica3.docPrincipal.DocumentoPrincipal;
-import parctica3.ip.DireccionIp;
-import parctica3.tiempo.TiempoCarga;
+
+import practicas.java.practica3.directorio.Directorios;
+import practicas.java.practica3.docprincipal.DocumentoPrincipal;
+import practicas.java.practica3.ip.DireccionIp;
+import practicas.java.practica3.tiempo.TiempoCarga;
 
 public class UserInterface extends JFrame {
 

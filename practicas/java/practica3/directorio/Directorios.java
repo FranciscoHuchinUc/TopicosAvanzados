@@ -1,4 +1,4 @@
-package practica3.directorio;
+package practicas.java.practica3.directorio;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

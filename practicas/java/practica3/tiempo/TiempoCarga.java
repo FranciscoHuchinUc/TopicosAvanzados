@@ -1,4 +1,4 @@
-package practica3.tiempo;
+package practicas.java.practica3.tiempo;
 
 import java.net.*;
 

@@ -1,6 +1,6 @@
-package practica3;
+package practicas.java.practica3;
 
-import parctica3.userInterface.UserInterface;
+import practicas.java.practica3.ventana.UserInterface;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package ejercicios.blocnenotas;
+package ejercicios.blocdenotas;
 
 import java.awt.*;
 import java.awt.event.*;

@@ -1,4 +1,4 @@
-package practica3.ip;
+package practicas.java.practica3.ip;
 
 import java.net.*;
 

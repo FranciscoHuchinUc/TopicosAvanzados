@@ -1,3 +1,5 @@
+package ejercicios.ejercicio8;
+
 import java.awt.*;
 
 public class SpritePlayer extends Canvas {

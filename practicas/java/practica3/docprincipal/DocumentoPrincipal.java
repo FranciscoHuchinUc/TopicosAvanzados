@@ -1,4 +1,4 @@
-package practica3.docprincipal;
+package practicas.java.practica3.docprincipal;
 
 import java.io.*;
 import java.net.*;

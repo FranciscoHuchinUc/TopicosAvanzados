@@ -1,3 +1,4 @@
+package ejercicios.ejercicio7;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -9,7 +10,7 @@ public class Snake extends Frame implements KeyListener{
      */
     private static final long serialVersionUID = 1L;
 
-    private SpritePlayer sprite;
+    private Sprite sprite;
 
     public Snake() {
         initComponets();
@@ -17,7 +18,7 @@ public class Snake extends Frame implements KeyListener{
 
     public void initComponets() {
 
-        sprite = new SpritePlayer();
+        sprite = new Sprite();
         
         sprite.addKeyListener(this);
         this.addKeyListener(this);

@@ -1,4 +1,4 @@
-package practica2;
+package practicas.java.practica2;
 
 import java.awt.*;
 
