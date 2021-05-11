@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class InterfaceCliente extends JFrame {
 
-    public User() {
+    public InterfaceCliente() {
         initComponents();
     }
 

@@ -1,3 +1,5 @@
+package ejercicios2p.json;
+
 public class Country {
 
     private String name_en;
@@ -28,5 +30,9 @@ public class Country {
     }
     public void setCode(String code) {
         this.code = code;
+    }
+    @Override
+    public String toString() {
+        return "Country []";
     }
 }

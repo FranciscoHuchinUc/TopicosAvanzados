@@ -1,3 +1,4 @@
+package ejercicios2p.json;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -6,6 +7,9 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.json.simple.*;
+import org.json.simple.parser.*;
 
 public class CountriesController {
 
@@ -31,16 +35,20 @@ public class CountriesController {
         while ((buffer = reader.readLine()) != null) {
             response += buffer;
         }
-        JsonObject  object = new JsonObject (response);
-        JsonArray  array = object.getJsonArray("countries");
+
+        JSONParser parse = new JSONParser();
+        Object obj = parse.parse(response);
+        JSONObject object = (JSONObject) obj;
+        JSONArray array = (JSONArray) object.get("countries");
         ArrayList<Country> countries = new ArrayList<>();
-        for(int i=0; i<array.length(); i++){
-            JsonObject obj = array.getJsonObject(i);
+        
+        for (int i = 0; i < array.size(); i++) {
+            JSONObject country = (JSONObject) array.get(i);
             Country c = new Country();
-            c.setName_en(obj.get("name_en"));
-            c.setName_es("name_es");
-            c.setDial_code("dial_code");
-            c.setCode("code");
+            c.setName_en((String) country.get("name_en"));
+            c.setName_es((String) country.get("name_es"));
+            c.setCode((String) country.get("code"));
+            c.setDial_code((String) country.get("dial_code"));
             countries.add(c);
         }
     }
@@ -52,6 +60,7 @@ public class CountriesController {
     public static void main(String[] args) {
         try {
             CountriesController ctrl = new CountriesController();
+            ctrl.list();
         } catch (Exception e) {
             e.printStackTrace();
         }
