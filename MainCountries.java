@@ -1,4 +1,3 @@
-import javax.swing.JFrame;
 
 import ejercicios2p.json.CountryUI;
 
