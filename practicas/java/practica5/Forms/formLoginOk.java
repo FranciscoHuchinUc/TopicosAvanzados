@@ -2,6 +2,7 @@ package Forms;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class formLoginOk extends JDialog {
 
@@ -17,11 +18,26 @@ public class formLoginOk extends JDialog {
 
         imgAccepted = new JLabel();
         imgAccepted.setIcon(new ImageIcon(getClass().getResource("/src/OK.png")));
-        imgAccepted.setBounds(149, 100, 98, 98);
+        imgAccepted.setBounds(130, 25, 120, 120);
+        imgDialog.add(imgAccepted);
+
+        strMensaje = new JLabel("Acceso Correcto");
+        strMensaje.setFont(new Font("Segoe UI", 0, 15));
+        strMensaje.setBounds(140, 140, 250, 27);
+        imgDialog.add(strMensaje);
+
+        btnAceptar = new JButton("Aceptar");
+        btnAceptar.setBackground(new Color(76, 175, 80));
+        btnAceptar.setForeground(Color.WHITE);
+        btnAceptar.setFont(new Font("Segoe UI", 1, 15));
+        btnAceptar.setFocusable(false);
+        btnAceptar.setBorder(null);
+        btnAceptar.setBounds(100, 180, 183, 31);
+        btnAceptar.addActionListener(e -> btnAceptarActionPerformed(e));
+        imgDialog.add(btnAceptar);
 
         
         getContentPane().add(imgDialog, BorderLayout.CENTER);
-        getContentPane().add(imgAccepted, BorderLayout.AFTER_LAST_LINE);
 
         // Setting Window
         this.setSize(400, 250);
@@ -37,10 +53,16 @@ public class formLoginOk extends JDialog {
         formLoginOk f = new formLoginOk(new JFrame(), true);
     }
 
+    public void btnAceptarActionPerformed(ActionEvent e){
+        System.exit(1);
+    }
+
     // Variables declaration
 
     JLabel imgDialog;
     JLabel imgAccepted;
+    JLabel strMensaje;
+    JButton btnAceptar;
 
     // End of variables declaration
     

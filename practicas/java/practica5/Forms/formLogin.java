@@ -3,6 +3,9 @@ package Forms;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
+
+import Conexion.Connect;
+
 import java.awt.event.*;
 
 public class formLogin extends JFrame {
@@ -91,8 +94,21 @@ public class formLogin extends JFrame {
         this.setVisible(true);
     }
 
-    private void btnLoginActionPerformed(ActionEvent e){
-        System.out.println(txtPassword.getText());
+    private void btnLoginActionPerformed(ActionEvent e) {
+        try {
+            Connect connect = new Connect();
+            connect.connectionDB();
+            String user = txtUsuario.getText();
+            String pass = txtPassword.getText();
+            
+            if(connect.accesDB(user, pass)){
+                new formLoginOk(this, true);
+            } else {
+                new formLoginError(this, true);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     // Variables declaration
@@ -102,6 +118,7 @@ public class formLogin extends JFrame {
     JTextField txtUsuario;
     JLabel lblPassword;
     JPasswordField txtPassword;
+    JLabel strMensaje;
     JLabel imgLogo;
     JPanel pnlLogin;
     JButton btnLogin;
