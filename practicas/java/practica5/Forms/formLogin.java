@@ -1,4 +1,4 @@
-//package practicas.java.practica5;
+package Forms;
 
 import java.awt.*;
 import javax.swing.*;
