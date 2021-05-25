@@ -31,6 +31,7 @@ class Game(context: Context, vsAI: Boolean = true, bounds: Rect) : GameLoop {
             bounds.exactCenterX() - players[0].location.width() / 2,
             bounds.bottom - players[0].location.height()
         )
+
         ball.location.offsetTo(
             players[1].location.centerX() - ball.location.centerX(),
             players[1].location.bottom
@@ -48,8 +49,8 @@ class Game(context: Context, vsAI: Boolean = true, bounds: Rect) : GameLoop {
     override fun update() {
         ball.update()
         for (p in players) p.update()
-        state = if (collide(bounds)) STATE.END else state
-        for (p in players) collide(p)
+        state = if (colicion(bounds)) STATE.END else state
+        for (p in players) colicion(p)
     }
 
     fun processInput(o: Any?) {
@@ -67,7 +68,7 @@ class Game(context: Context, vsAI: Boolean = true, bounds: Rect) : GameLoop {
      * @param o or Player
      * @return true = end game
      */
-    fun collide(o: Any?): Boolean {
+    fun colicion(o: Any?): Boolean {
         if (o is Rect) {
             if (ball.location.left <= 0 || ball.location.right >= o.right) {
                 ball.movVec.x = -ball.movVec.x
