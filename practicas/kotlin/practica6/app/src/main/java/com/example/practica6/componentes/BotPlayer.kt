@@ -6,29 +6,9 @@ class BotPlayer(context: Context, shapeId: Int?, game: Game?) :
     Player(context, shapeId) {
     var game: Game?
 
-    enum class TYPE {
-        DUMP, NORMAL, SMART
-    }
-
-    var type = TYPE.NORMAL
-
     init {
-        when (type) {
-            TYPE.DUMP -> {
-                movVec.x = 3f
-                updateRate = 50
-                location.right = (game!!.bounds.width() / 2.5).toFloat()
-            }
-            TYPE.NORMAL -> {
-                movVec.x = 6f
-                updateRate = 80
-                location.right = (game!!.bounds.width() / 4).toFloat()
-            }
-            TYPE.SMART -> {
-                movVec.x = 8f
-                updateRate = 100
-            }
-        }
+        movVec.x = 8f
+        updateRate = 100
         this.game = game
     }
 

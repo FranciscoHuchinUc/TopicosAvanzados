@@ -10,7 +10,7 @@ class Ball(context: Context, shapeId: Int?) : Sprite(context, shapeId) {
     override var timeToUpdate: Long = currentTimeMillis()
 
     init {
-        this.movVec.set(3f, 4f)
+        this.movVec.set(5f, 6f)
     }
 
     override fun update() {
