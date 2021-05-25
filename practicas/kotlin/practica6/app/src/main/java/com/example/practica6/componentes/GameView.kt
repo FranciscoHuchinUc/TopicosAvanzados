@@ -11,13 +11,13 @@ import android.view.SurfaceHolder
 import android.view.SurfaceView
 import com.example.practica6.interfaz.GameLoop
 
-class GameView (context: Context?, vsAI: Boolean = true): SurfaceView(context), SurfaceHolder.Callback, Runnable, GameLoop {
+class GameView(context: Context?) : SurfaceView(context), SurfaceHolder.Callback, Runnable, GameLoop {
+
     override var updateRate: Int = 120
     override var timeToUpdate: Long = System.currentTimeMillis()
 
     private var mThread: Thread? = null
     lateinit var mCanvas: Canvas
-    var vsAI = true
 
     var mHolder: SurfaceHolder?
     private var bounds: Rect = Rect()
@@ -28,42 +28,42 @@ class GameView (context: Context?, vsAI: Boolean = true): SurfaceView(context), 
 
     var game: Game? = null
 
+
     init {
         mHolder = holder
-        if (mHolder != null){
+        if (mHolder != null) {
             mHolder?.addCallback(this)
         }
-        this.vsAI = vsAI
     }
 
-    fun setup() {
+    private fun setup(vsAI: Boolean = true) {
         game = Game(this.context, vsAI, bounds)
-        start()
     }
 
     fun start() {
         game?.state = Game.STATE.STARTED
         mThread = Thread(this)
         timeToUpdate = System.currentTimeMillis()
-        game?.ball!!.timeToUpdate = System.currentTimeMillis()
         mThread?.start()
     }
 
     fun stop() {
         game?.state = Game.STATE.END
         try {
+            // Stop the thread == rejoin the main thread.
             mThread?.join()
-        } catch (e: InterruptedException){
+        } catch (e: InterruptedException) {
         }
     }
 
     override fun surfaceCreated(p0: SurfaceHolder) {
-        Log.d(this.toString(), "Surface Creado")
+        Log.d(this.toString(), "surface created")
     }
 
     override fun surfaceChanged(p0: SurfaceHolder, p1: Int, p2: Int, p3: Int) {
-        Log.d(this.toString(), "Surface Cargado")
-        bounds = Rect(50, p3 / 12, p2 - 50, p3 - p3 /12)
+        Log.d(this.toString(), "surface changed")
+        bounds = Rect(0, 0, p2, p3)
+        start()
     }
 
     override fun surfaceDestroyed(p0: SurfaceHolder) {
@@ -71,7 +71,7 @@ class GameView (context: Context?, vsAI: Boolean = true): SurfaceView(context), 
     }
 
     override fun run() {
-        while (game?.state == Game.STATE.STARTED){
+        while (game?.state == Game.STATE.STARTED) {
             while (shouldUpdate) {
                 update()
             }
@@ -85,7 +85,7 @@ class GameView (context: Context?, vsAI: Boolean = true): SurfaceView(context), 
     }
 
     override fun render(canvas: Canvas?) {
-        if (mHolder!!.surface?.isValid == true){
+        if (mHolder!!.surface?.isValid == true) {
             mCanvas = mHolder!!.lockCanvas()
             mCanvas.drawColor(Color.WHITE)
             game?.render(mCanvas)

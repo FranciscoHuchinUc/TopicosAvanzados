@@ -6,26 +6,14 @@ import android.graphics.Rect
 import android.view.MotionEvent
 import com.example.practica6.R
 import com.example.practica6.interfaz.GameLoop
-import com.example.practica6.interfaz.GameStateListener
-import java.lang.Exception
 
-class Game (context: Context, vsAI: Boolean = true, bounds: Rect): GameLoop {
-    var onGameStateChangeListener: GameStateListener? = null
+class Game(context: Context, vsAI: Boolean = true, bounds: Rect) : GameLoop {
 
     enum class STATE {
         END, PAUSED, STARTED
     }
 
     var state = STATE.PAUSED
-        set(value) {
-            try {
-                if(field != value){
-                    onGameStateChangeListener?.stateChanged(value)
-                }
-            } catch (e: Exception){
-            }
-            field = value
-        }
     var bounds: Rect
     var ball: Ball
     var players: Array<Player>
@@ -35,26 +23,14 @@ class Game (context: Context, vsAI: Boolean = true, bounds: Rect): GameLoop {
         ball = Ball(context, R.drawable.ball)
         players = arrayOf(
             Player(context, R.drawable.barra),
-            if(vsAI) BotPlayer(context, R.drawable.barra, this) else
+            if (vsAI) BotPlayer(context, R.drawable.barra, this) else
                 Player(context, R.drawable.barra)
         )
 
         players[0].location.offsetTo(
-            bounds.exactCenterX() - players[0].location.width()/2,
+            bounds.exactCenterX() - players[0].location.width() / 2,
             bounds.bottom - players[0].location.height()
         )
-
-        players[1].location.offsetTo(
-            bounds.exactCenterX() - players[1].location.width()/2,
-            bounds.top.toFloat()
-        )
-
-        //
-        ball.location.offsetTo(
-            players[1].location.centerX() - ball.location.centerX(),
-            players[1].location.bottom
-        )
-
         ball.location.offsetTo(
             players[1].location.centerX() - ball.location.centerX(),
             players[1].location.bottom
@@ -72,65 +48,50 @@ class Game (context: Context, vsAI: Boolean = true, bounds: Rect): GameLoop {
     override fun update() {
         ball.update()
         for (p in players) p.update()
-        if (collide(bounds)) state = STATE.END
+        state = if (collide(bounds)) STATE.END else state
         for (p in players) collide(p)
     }
 
-    fun processInput(o: MotionEvent?){
-        if (o is MotionEvent){
+    fun processInput(o: Any?) {
+        if (o is MotionEvent) {
             if (o.y > bounds.exactCenterY()) {
                 players[0].location.offsetTo(o.x, players[0].location.top)
             } else if (players[1] !is BotPlayer) {
-                players[1].location.offsetTo(o.x, players[1].location.top)
+                players[1].location.offsetTo(o.x, 0f)
             }
         }
     }
 
-    /*
-    * Ball to any other object
-    * @param o or Player
-    * @return true = end game
+    /**
+     * Ball to any other object
+     * @param o or Player
+     * @return true = end game
      */
     fun collide(o: Any?): Boolean {
-        if (o is Rect){
-            if (ball.location.left <= o.left || ball.location.right >= o.right) {
+        if (o is Rect) {
+            if (ball.location.left <= 0 || ball.location.right >= o.right) {
                 ball.movVec.x = -ball.movVec.x
-                if (ball.location.left <= o.left){
-                    ball.location.offset(o.left - ball.location.left, 0f)
+                if (ball.location.left <= 0) {
+                    ball.location.offset(-ball.location.left, 0f)
                 } else {
                     ball.location.offset(o.right - ball.location.right, 0f)
                 }
             }
 
-            if (ball.location.top <= o.top || ball.location.bottom >= o.bottom) {
-                if (ball.location.top <= o.top){
+            if (ball.location.top <= 0 || ball.location.bottom >= o.bottom) {
+                if (ball.location.top <= 0) {
                     players[0].score++
-                    players[1].health--
-                    ball.location.offsetTo(
-                        players[1].location.centerX(),
-                        players[1].location.bottom
-                    )
                 } else {
                     players[1].score++
-                    players[0].health--
-                    ball.location.offset(o.left - ball.location.left, 0f)
-                    ball.location.offsetTo(
-                        players[0].location.centerX() - ball.location.width() / 2,
-                        players[0].location.top - ball.location.height()
-                    )
                 }
-
-                if (players[0].health == 0 || players[1].health == 0){
-                    return true
-                } else {
-                    this.state = STATE.PAUSED
-                }
+                return true
             }
-        } else if (o is Player){
-            if (o.location.contains(ball.location.centerX(), ball.location.bottom)){
+        } else if (o is Player) {
+            if (o.location.contains(ball.location.centerX(), ball.location.bottom)) {
                 ball.movVec.y = -ball.movVec.y
-                ball.location.offset(0f, o.location.centerX() - ball.location.top)
-            } else if (o.location.contains(ball.location.centerX(), ball.location.top)) {
+                ball.location.offset(0f, o.location.top - ball.location.bottom)
+            } else if (o.location.contains(ball.location.centerX(), ball.location.top)
+            ) {
                 ball.movVec.y = -ball.movVec.y
                 ball.location.offset(0f, o.location.bottom - ball.location.top)
             }

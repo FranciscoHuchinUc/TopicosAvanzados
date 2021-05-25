@@ -3,8 +3,8 @@ package com.example.practica6.componentes
 import android.content.Context
 import java.lang.System.currentTimeMillis
 
-class Ball (context: Context, shapeId: Int?): Sprite(context, shapeId) {
-    var deltaOffste: Float = 1f
+class Ball(context: Context, shapeId: Int?) : Sprite(context, shapeId) {
+    var ratio: Float = 1f
 
     override var updateRate: Int = 100
     override var timeToUpdate: Long = currentTimeMillis()
@@ -14,15 +14,16 @@ class Ball (context: Context, shapeId: Int?): Sprite(context, shapeId) {
     }
 
     override fun update() {
-        if(shouldUpdate){
+        if (shouldUpdate) {
             val current = currentTimeMillis()
             val delta = current - timeToUpdate
-            deltaOffste = 1f + delta.toFloat() * updateRate / 1000f
+            ratio = 1f + delta.toFloat() * updateRate / 1000f
             timeToUpdate = current + 1000L / updateRate
             location.offset(
-                movVec.x * deltaOffste,
-                movVec.y * deltaOffste
+                movVec.x * ratio,
+                movVec.y * ratio
             )
         }
     }
+
 }
