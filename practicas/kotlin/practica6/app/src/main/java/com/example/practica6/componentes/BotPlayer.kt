@@ -2,8 +2,8 @@ package com.example.practica6.componentes
 
 import android.content.Context
 
-class BotPlayer(context: Context, shapeId: Int?, game: Game?) :
-    Player(context, shapeId) {
+class BotPlayer(context: Context, shapeId: Int?, game: Game?) : Player(context, shapeId) {
+
     var game: Game?
 
     init {

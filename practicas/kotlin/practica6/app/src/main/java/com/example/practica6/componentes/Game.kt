@@ -21,12 +21,16 @@ class Game(context: Context, vsAI: Boolean = true, bounds: Rect) : GameLoop {
     init {
         this.bounds = bounds
         ball = Ball(context, R.drawable.ball)
+
+        // Agregamos al array de player al jugar y al bot
         players = arrayOf(
-            Player(context, R.drawable.barra),
-            if (vsAI) BotPlayer(context, R.drawable.barra, this) else
-                Player(context, R.drawable.barra)
+            Player(context, R.drawable.barra), BotPlayer(context, R.drawable.barra, this)
         )
 
+        /**
+         * Coloacamos la posicion en donde se encontrara
+         * tanto el bot como el jugador dentro la pantalla
+         */
         players[0].location.offsetTo(
             bounds.exactCenterX() - players[0].location.width() / 2,
             bounds.bottom - players[0].location.height()
@@ -53,20 +57,22 @@ class Game(context: Context, vsAI: Boolean = true, bounds: Rect) : GameLoop {
         for (p in players) colicion(p)
     }
 
+    /**
+     * Permite identificar la posicion de movimeinto del jugador y le retorna a la funcion
+     * onTouchEvent
+    */
     fun processInput(o: Any?) {
         if (o is MotionEvent) {
             if (o.y > bounds.exactCenterY()) {
                 players[0].location.offsetTo(o.x, players[0].location.top)
-            } else if (players[1] !is BotPlayer) {
-                players[1].location.offsetTo(o.x, 0f)
             }
         }
     }
 
     /**
-     * Ball to any other object
-     * @param o or Player
-     * @return true = end game
+     * Bola a cualquier otro objeto
+     * @param o Jugador
+     * @return true = fin de la partida
      */
     fun colicion(o: Any?): Boolean {
         if (o is Rect) {
@@ -79,11 +85,17 @@ class Game(context: Context, vsAI: Boolean = true, bounds: Rect) : GameLoop {
                 }
             }
 
+            /**
+             * Identifica la colicion del lado del jugador y el bot
+             * le suma punto a que tenga la colision
+             */
             if (ball.location.top <= 0 || ball.location.bottom >= o.bottom) {
                 if (ball.location.top <= 0) {
                     players[0].score++
+                    System.out.println(players[0].score++)
                 } else {
                     players[1].score++
+                    System.out.println(players[1].score++)
                 }
                 return true
             }
