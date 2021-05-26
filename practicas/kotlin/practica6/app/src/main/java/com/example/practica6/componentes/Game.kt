@@ -86,8 +86,8 @@ class Game(context: Context, vsAI: Boolean = true, bounds: Rect) : GameLoop {
             }
 
             /**
-             * Identifica la colicion del lado del jugador y el bot
-             * le suma punto a que tenga la colision
+             * Identifica de que lado fue la colicion si del jugador o del bot
+             * Le suma punto a que tenga la colision
              */
             if (ball.location.top <= 0 || ball.location.bottom >= o.bottom) {
                 if (ball.location.top <= 0) {
