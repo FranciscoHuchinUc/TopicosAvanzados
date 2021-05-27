@@ -1,9 +1,13 @@
 package com.example.practica6.componentes
 
+import android.app.AlertDialog
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Rect
+import android.graphics.drawable.ColorDrawable
 import android.view.MotionEvent
+import androidx.appcompat.app.AppCompatActivity
 import com.example.practica6.R
 import com.example.practica6.interfaz.GameLoop
 
@@ -14,6 +18,7 @@ class Game(context: Context, vsAI: Boolean = true, bounds: Rect) : GameLoop {
     }
 
     var state = STATE.PAUSED
+
     var bounds: Rect
     var ball: Ball
     var players: Array<Player>

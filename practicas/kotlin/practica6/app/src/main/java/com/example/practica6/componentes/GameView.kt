@@ -2,16 +2,15 @@ package com.example.practica6.componentes
 
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
-import android.content.res.Resources
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Rect
+import android.graphics.drawable.ColorDrawable
 import android.util.Log
 import android.view.MotionEvent
 import android.view.SurfaceHolder
 import android.view.SurfaceView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.practica6.R
 import com.example.practica6.interfaz.GameLoop
 
