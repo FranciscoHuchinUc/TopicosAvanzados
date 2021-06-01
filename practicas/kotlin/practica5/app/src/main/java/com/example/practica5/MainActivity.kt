@@ -21,22 +21,13 @@ class MainActivity : AppCompatActivity() {
         init()
     }
 
-    //
+    // Muestra una alerta y pasa a la guiente ventana
     fun formLoginOk() {
-//        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-//        builder.setTitle(" ")
-//        builder.setMessage("Inicio de Sesion Correcto")
-//        builder.setIcon(R.drawable.correct)
-//
-//        builder.setPositiveButton("Aceptar", DialogInterface.OnClickListener { dialog, which ->
-//            dialog.dismiss()
-//            mostrarPantalla()
-//        })
-//        builder.show()
         Toast.makeText(applicationContext, "Inicio de Sesion Correcto", Toast.LENGTH_SHORT).show()
         mostrarPantalla()
     }
 
+    // Muestra un cuadro de dialogo de error de contraseña
     fun formLoginError() {
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
         builder.setTitle(" ")
@@ -49,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         builder.show()
     }
 
+    // Nos permite validar si lo ingresado por el usuario concuerda con lo declarado para acceder
     fun validarUsuario(view: View) {
         init()
         if(usuario.length() == 0 || password.length() == 0){
@@ -62,11 +54,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Funcion que permite invocan nuestra siguiente ventana
     fun mostrarPantalla(){
         val loggHome = Intent(this, homeLogin:: class.java)
         startActivity(loggHome)
     }
 
+    // Inicializacion de los componentes
     fun init(){
         usuario = findViewById(R.id.txtUser)
         password = findViewById(R.id.txtPassword)

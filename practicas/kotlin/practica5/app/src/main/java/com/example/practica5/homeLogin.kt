@@ -3,8 +3,6 @@ package com.example.practica5
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
-import androidx.core.text.set
 
 class homeLogin : AppCompatActivity() {
 
@@ -13,7 +11,9 @@ class homeLogin : AppCompatActivity() {
         setContentView(R.layout.activity_home_login)
     }
 
+    // Funcion que hacer que se cierra a si mismo y regresa al activity anterior
     fun RetunActivity(view: View){
         finish()
     }
 }
+
