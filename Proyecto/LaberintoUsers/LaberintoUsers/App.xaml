@@ -4,11 +4,11 @@
              x:Class="LaberintoUsers.App">
     <Application.Resources>
         <ResourceDictionary>
-            <OnPlatform x:Key="SFBold" x:TypeArguments="x:String">
-                <On Platform="Android" Value="sfbold.otf#sfbold"/>
+            <OnPlatform x:Key="GilroyBold" x:TypeArguments="x:String">
+                <On Platform="Android" Value="gilroybold.ttf#gilroybold"/>
             </OnPlatform>
-            <OnPlatform x:Key="SFMedium" x:TypeArguments="x:String">
-                <On Platform="Android" Value="sfmedium.otf#sfmedium"/>
+            <OnPlatform x:Key="GilroyMedium" x:TypeArguments="x:String">
+                <On Platform="Android" Value="gilroymedium.ttf#gilroymedium"/>
             </OnPlatform>
         </ResourceDictionary>
     </Application.Resources>

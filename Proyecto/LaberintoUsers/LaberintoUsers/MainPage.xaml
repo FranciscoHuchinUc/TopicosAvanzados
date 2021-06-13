@@ -18,7 +18,7 @@
                         HorizontalOptions="Center"
                         FontSize="30"
                         FontAttributes="Bold"
-                        FontFamily="{StaticResource SFBold}"
+                        FontFamily="{StaticResource GilroyBold}"
                         Margin="0, 30, 0, 30" />
                 </Frame>
 
@@ -30,7 +30,7 @@
                                     <Frame  Margin="10" BackgroundColor="#E8E8E8" Padding="10" CornerRadius="05">
                                         <Label
                                             Text="{Binding UserName}"
-                                            FontFamily="{StaticResource SFMedium}"
+                                            FontFamily="{StaticResource GilroyMedium}"
                                             TextColor="#2E2E2E"
                                             HorizontalOptions="Center"
                                             FontSize="25"/>
