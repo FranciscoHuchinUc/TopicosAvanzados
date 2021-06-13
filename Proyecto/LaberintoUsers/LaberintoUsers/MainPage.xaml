@@ -27,11 +27,11 @@
                         <DataTemplate>
                             <ViewCell>
                                 <Grid>
-                                    <Frame  Margin="10" BackgroundColor="#E8E8E8" Padding="10" CornerRadius="05">
+                                    <Frame  Margin="10" BackgroundColor="#EEF7FE" Padding="10" CornerRadius="05">
                                         <Label
                                             Text="{Binding UserName}"
                                             FontFamily="{StaticResource GilroyMedium}"
-                                            TextColor="#2E2E2E"
+                                            TextColor="#415EB6"
                                             HorizontalOptions="Center"
                                             FontSize="25"/>
                                     </Frame>
