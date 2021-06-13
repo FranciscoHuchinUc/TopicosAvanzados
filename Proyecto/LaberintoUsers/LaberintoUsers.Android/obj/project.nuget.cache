@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8J+Ohwqp7WK1dnjXMER6oiKdvx7vkjVjd6HQ+7vmyUUX2/1S/tWJivH8GAi7+h5B4dupLZbkhhHCjB0y7WkYlw==",
+  "dgSpecHash": "PXCcNUUwkUgbSjzU+ZHlLBxFGvqWzhchgv6v6aQC6LRp0IbSyrkuAyCXR4/iuTVg6JInwMjCh5XknhWWsMsmsA==",
   "success": true,
-  "projectFilePath": "D:\\Developer\\C#\\LaberintoUsers\\LaberintoUsers.Android\\LaberintoUsers.Android.csproj",
+  "projectFilePath": "D:\\Developer\\Repositorio\\TopicosAvanzados\\Proyecto\\LaberintoUsers\\LaberintoUsers.Android\\LaberintoUsers.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FranciscoHuchin\\.nuget\\packages\\firebasedatabase.net\\4.0.4\\firebasedatabase.net.4.0.4.nupkg.sha512",
     "C:\\Users\\FranciscoHuchin\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",

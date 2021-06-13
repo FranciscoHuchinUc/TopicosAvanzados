@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9O/qXiqLc8qkj23QWfbv0Ax68siJg0R8KgDaAuaPz2u87SDIzd+x647nrI8yOmODSx0ZbNnDs0A9alObU2Kbhw==",
+  "dgSpecHash": "y+S3bLwuTLe6WEvSCtrFjdbX9WkycbMaKlSO/CzNcaW2YCRhRlQfif8zlKkzeFmNh/zC9plYHJVKbXYu1nAiaw==",
   "success": true,
-  "projectFilePath": "D:\\Developer\\C#\\LaberintoUsers\\LaberintoUsers\\LaberintoUsers.csproj",
+  "projectFilePath": "D:\\Developer\\Repositorio\\TopicosAvanzados\\Proyecto\\LaberintoUsers\\LaberintoUsers\\LaberintoUsers.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FranciscoHuchin\\.nuget\\packages\\firebasedatabase.net\\4.0.4\\firebasedatabase.net.4.0.4.nupkg.sha512",
     "C:\\Users\\FranciscoHuchin\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",

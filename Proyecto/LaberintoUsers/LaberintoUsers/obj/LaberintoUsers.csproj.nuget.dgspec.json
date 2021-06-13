@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Developer\\C#\\LaberintoUsers\\LaberintoUsers\\LaberintoUsers.csproj": {}
+    "D:\\Developer\\Repositorio\\TopicosAvanzados\\Proyecto\\LaberintoUsers\\LaberintoUsers\\LaberintoUsers.csproj": {}
   },
   "projects": {
-    "D:\\Developer\\C#\\LaberintoUsers\\LaberintoUsers\\LaberintoUsers.csproj": {
+    "D:\\Developer\\Repositorio\\TopicosAvanzados\\Proyecto\\LaberintoUsers\\LaberintoUsers\\LaberintoUsers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Developer\\C#\\LaberintoUsers\\LaberintoUsers\\LaberintoUsers.csproj",
+        "projectUniqueName": "D:\\Developer\\Repositorio\\TopicosAvanzados\\Proyecto\\LaberintoUsers\\LaberintoUsers\\LaberintoUsers.csproj",
         "projectName": "LaberintoUsers",
-        "projectPath": "D:\\Developer\\C#\\LaberintoUsers\\LaberintoUsers\\LaberintoUsers.csproj",
+        "projectPath": "D:\\Developer\\Repositorio\\TopicosAvanzados\\Proyecto\\LaberintoUsers\\LaberintoUsers\\LaberintoUsers.csproj",
         "packagesPath": "C:\\Users\\FranciscoHuchin\\.nuget\\packages\\",
-        "outputPath": "D:\\Developer\\C#\\LaberintoUsers\\LaberintoUsers\\obj\\",
+        "outputPath": "D:\\Developer\\Repositorio\\TopicosAvanzados\\Proyecto\\LaberintoUsers\\LaberintoUsers\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Archivos de Programas\\Microsoft Visual Studio\\Shared\\NuGetPackages",

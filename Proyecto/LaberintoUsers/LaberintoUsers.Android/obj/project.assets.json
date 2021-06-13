@@ -2504,11 +2504,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Developer\\C#\\LaberintoUsers\\LaberintoUsers.Android\\LaberintoUsers.Android.csproj",
+      "projectUniqueName": "D:\\Developer\\Repositorio\\TopicosAvanzados\\Proyecto\\LaberintoUsers\\LaberintoUsers.Android\\LaberintoUsers.Android.csproj",
       "projectName": "LaberintoUsers.Android",
-      "projectPath": "D:\\Developer\\C#\\LaberintoUsers\\LaberintoUsers.Android\\LaberintoUsers.Android.csproj",
+      "projectPath": "D:\\Developer\\Repositorio\\TopicosAvanzados\\Proyecto\\LaberintoUsers\\LaberintoUsers.Android\\LaberintoUsers.Android.csproj",
       "packagesPath": "C:\\Users\\FranciscoHuchin\\.nuget\\packages\\",
-      "outputPath": "D:\\Developer\\C#\\LaberintoUsers\\LaberintoUsers.Android\\obj\\",
+      "outputPath": "D:\\Developer\\Repositorio\\TopicosAvanzados\\Proyecto\\LaberintoUsers\\LaberintoUsers.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2531,8 +2531,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "D:\\Developer\\C#\\LaberintoUsers\\LaberintoUsers\\LaberintoUsers.csproj": {
-              "projectPath": "D:\\Developer\\C#\\LaberintoUsers\\LaberintoUsers\\LaberintoUsers.csproj"
+            "D:\\Developer\\Repositorio\\TopicosAvanzados\\Proyecto\\LaberintoUsers\\LaberintoUsers\\LaberintoUsers.csproj": {
+              "projectPath": "D:\\Developer\\Repositorio\\TopicosAvanzados\\Proyecto\\LaberintoUsers\\LaberintoUsers\\LaberintoUsers.csproj"
             }
           }
         }
