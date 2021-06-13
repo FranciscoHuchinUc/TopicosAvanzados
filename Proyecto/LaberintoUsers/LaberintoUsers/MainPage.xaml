@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LaberintoUsers.MainPage"
+             BackgroundColor="White">
+
+    <RefreshView x:Name="MyRefreshView" RefreshColor="#2196F3" Refreshing="RefreshView_Refreshing">
+        <ScrollView>
+            <StackLayout>
+                <!-- <Entry Visual="Material" FontSize="24" Placeholder="UserName" x:Name="MyUserName"/> -->
+                <!-- <Entry Visual="Material" FontSize="24" Placeholder="Password" x:Name="MyPassword"/> -->
+                <!-- <Button BackgroundColor="Black" TextColor="White" Text="SendData" Clicked="Button_Clicked"/> -->
+
+                <Frame BackgroundColor="#2196F3" Padding="0" CornerRadius="0">
+                    <Label 
+                        Text="Usuarios Registrados"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        FontSize="30"
+                        FontAttributes="Bold"
+                        FontFamily="{StaticResource SFBold}"
+                        Margin="0, 30, 0, 30" />
+                </Frame>
+
+                <ListView x:Name="MyList" Footer="" HasUnevenRows="True" ItemSelected="MyList_ItemSelected" Margin="0,50,0,0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Frame  Margin="10" BackgroundColor="#E8E8E8" Padding="10" CornerRadius="05">
+                                        <Label
+                                            Text="{Binding UserName}"
+                                            FontFamily="{StaticResource SFMedium}"
+                                            TextColor="#2E2E2E"
+                                            HorizontalOptions="Center"
+                                            FontSize="25"/>
+                                    </Frame>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+        
+            </StackLayout>
+        </ScrollView>
+    </RefreshView>
+
+</ContentPage>
