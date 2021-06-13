@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LaberintoUsers.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="SFBold" x:TypeArguments="x:String">
+                <On Platform="Android" Value="sfbold.otf#sfbold"/>
+            </OnPlatform>
+            <OnPlatform x:Key="SFMedium" x:TypeArguments="x:String">
+                <On Platform="Android" Value="sfmedium.otf#sfmedium"/>
+            </OnPlatform>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
