@@ -5,32 +5,31 @@ import com.google.firebase.database.IgnoreExtraProperties;
 @IgnoreExtraProperties
 public class Diccionario {
 
-    public String palabra;
-    public String significado;
+    public String Palabra;
+    public String Significado;
 
     public Diccionario() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public Diccionario(String palabra, String significado) {
-        this.palabra = palabra;
-        this.significado = significado;
+    public Diccionario(String Palabra, String Significado) {
+        this.Palabra = Palabra;
+        this.Significado = Significado;
     }
 
     public String getPalabra() {
-        return palabra;
+        return Palabra;
     }
 
     public void setPalabra(String palabra) {
-        this.palabra = palabra;
+        Palabra = palabra;
     }
 
     public String getSignificado() {
-        return significado;
+        return Significado;
     }
 
     public void setSignificado(String significado) {
-        this.significado = significado;
+        Significado = significado;
     }
-    
 }
