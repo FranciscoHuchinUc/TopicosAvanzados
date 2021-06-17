@@ -1,9 +1,8 @@
-
-import view.StartGame;
+import view.RegistroDiccionario;
 
 public class Main {
 
     public static void main(String[] args) {
-        new StartGame();
+        new RegistroDiccionario();
     }
 }

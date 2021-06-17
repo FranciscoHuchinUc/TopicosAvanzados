@@ -1,0 +1,14 @@
+D:\Developer\Repositorio\TopicosAvanzados\Proyecto\DiccionarioMovil\DiccionarioMovil\bin\Debug\netstandard2.0\DiccionarioMovil.deps.json
+D:\Developer\Repositorio\TopicosAvanzados\Proyecto\DiccionarioMovil\DiccionarioMovil\bin\Debug\netstandard2.0\DiccionarioMovil.dll
+D:\Developer\Repositorio\TopicosAvanzados\Proyecto\DiccionarioMovil\DiccionarioMovil\bin\Debug\netstandard2.0\ref\DiccionarioMovil.dll
+D:\Developer\Repositorio\TopicosAvanzados\Proyecto\DiccionarioMovil\DiccionarioMovil\bin\Debug\netstandard2.0\DiccionarioMovil.pdb
+D:\Developer\Repositorio\TopicosAvanzados\Proyecto\DiccionarioMovil\DiccionarioMovil\obj\Debug\netstandard2.0\DiccionarioMovil.csproj.AssemblyReference.cache
+D:\Developer\Repositorio\TopicosAvanzados\Proyecto\DiccionarioMovil\DiccionarioMovil\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Developer\Repositorio\TopicosAvanzados\Proyecto\DiccionarioMovil\DiccionarioMovil\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\Developer\Repositorio\TopicosAvanzados\Proyecto\DiccionarioMovil\DiccionarioMovil\obj\Debug\netstandard2.0\DiccionarioMovil.AssemblyInfoInputs.cache
+D:\Developer\Repositorio\TopicosAvanzados\Proyecto\DiccionarioMovil\DiccionarioMovil\obj\Debug\netstandard2.0\DiccionarioMovil.AssemblyInfo.cs
+D:\Developer\Repositorio\TopicosAvanzados\Proyecto\DiccionarioMovil\DiccionarioMovil\obj\Debug\netstandard2.0\DiccionarioMovil.csproj.CoreCompileInputs.cache
+D:\Developer\Repositorio\TopicosAvanzados\Proyecto\DiccionarioMovil\DiccionarioMovil\obj\Debug\netstandard2.0\XamlC.stamp
+D:\Developer\Repositorio\TopicosAvanzados\Proyecto\DiccionarioMovil\DiccionarioMovil\obj\Debug\netstandard2.0\DiccionarioMovil.dll
+D:\Developer\Repositorio\TopicosAvanzados\Proyecto\DiccionarioMovil\DiccionarioMovil\obj\Debug\netstandard2.0\ref\DiccionarioMovil.dll
+D:\Developer\Repositorio\TopicosAvanzados\Proyecto\DiccionarioMovil\DiccionarioMovil\obj\Debug\netstandard2.0\DiccionarioMovil.pdb

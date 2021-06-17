@@ -15,21 +15,17 @@ import java.util.UUID;
 public class ApiService {
 
     public static void initFirebase() {
-        
+
         FileInputStream serviceAccount = null;
         try {
 
-            if(serviceAccount == null) {
-                serviceAccount = new FileInputStream("key.json");
-                FirebaseOptions options = new FirebaseOptions.Builder()
+            serviceAccount = new FileInputStream("key.json");
+            FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                    .setDatabaseUrl("https://xmazedb-default-rtdb.firebaseio.com/")
+                    .setDatabaseUrl("https://diccionariodb-default-rtdb.firebaseio.com/")
                     .build();
 
-                FirebaseApp.initializeApp(options);
-            } else {
-                serviceAccount = serviceAccount;
-            }
+            FirebaseApp.initializeApp(options);
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ApiService.class.getName()).log(Level.SEVERE, null, ex);
@@ -43,9 +39,9 @@ public class ApiService {
             }
         }
     }
-    
+
     public static String generateUUID() {
         return UUID.randomUUID().toString();
     }
-    
+
 }
