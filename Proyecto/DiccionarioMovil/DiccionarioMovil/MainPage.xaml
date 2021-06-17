@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DiccionarioMovil.MainPage">
+             x:Class="DiccionarioMovil.MainPage"
+             BackgroundColor="White">
 
     <StackLayout>
 
@@ -19,7 +20,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame BackgroundColor="#F3F3F3" HasShadow="False" CornerRadius="05">
+                        <Frame Margin="10" Padding="0, 10, 0, 10" BackgroundColor="#F3F3F3" HasShadow="False" CornerRadius="05">
                             <Grid VerticalOptions="CenterAndExpand">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="2*"/>
@@ -40,7 +41,7 @@
                                         TextColor="#111111"
                                         VerticalOptions="CenterAndExpand"
                                         HorizontalOptions="Fill"
-                                        FontSize="25"/>
+                                        FontSize="20"/>
                                 </StackLayout>
                             </Grid>
                         </Frame>
