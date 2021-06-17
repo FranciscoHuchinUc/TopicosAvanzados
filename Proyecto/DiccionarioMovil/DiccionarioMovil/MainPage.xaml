@@ -9,6 +9,7 @@
         <Frame BackgroundColor="#F1F3F6" Padding="0" CornerRadius="20" Margin="20, 30, 20, 10" HasShadow="False">
             <Label 
                 Text="Diccionario Maya"
+                FontFamily="{StaticResource GilroyHeavy}"
                 TextColor="#111111"
                 HorizontalOptions="Center"
                 FontSize="30"
@@ -32,12 +33,14 @@
                                 <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">
                                     <Label
                                         Text="{Binding Palabra}"
+                                        FontFamily="{StaticResource GilroyBold}"
                                         TextColor="Black"
                                         VerticalOptions="CenterAndExpand"
                                         HorizontalOptions="Fill"
                                         FontSize="25"/>
                                     <Label
                                         Text="{Binding Significado}"
+                                        FontFamily="{StaticResource GilroyMedium}"
                                         TextColor="#111111"
                                         VerticalOptions="CenterAndExpand"
                                         HorizontalOptions="Fill"

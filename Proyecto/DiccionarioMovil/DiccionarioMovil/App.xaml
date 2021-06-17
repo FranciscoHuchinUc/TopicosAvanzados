@@ -3,6 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DiccionarioMovil.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <OnPlatform x:Key="GilroyBold" x:TypeArguments="x:String">
+                <On Platform="Android" Value="gilroybold.ttf#gilroybold"/>
+            </OnPlatform>
+            <OnPlatform x:Key="GilroyMedium" x:TypeArguments="x:String">
+                <On Platform="Android" Value="gilroymedium.ttf#gilroymedium"/>
+            </OnPlatform>
+            <OnPlatform x:Key="GilroyHeavy" x:TypeArguments="x:String">
+                <On Platform="Android" Value="gilroyheavy.ttf#gilroyheavy"/>
+            </OnPlatform>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
