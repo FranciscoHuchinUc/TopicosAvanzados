@@ -33,10 +33,9 @@ public class RegistroDiccionario extends JFrame {
         imgFondo.setIcon(new ImageIcon(getClass().getResource("/img/Fondo.png")));
 
         lblTitle = new JLabel("DICCIONARIO MAYA");
-        btnConectar = new JButton("Conectar");
         lblInformacion = new JLabel("Rellene el formulario");
         txtPalabra = new JTextField();
-        txtSignificado = new JTextArea();
+        txtSignificado = new JTextField();
         btnEnviar = new JButton();
         lblMenssagge = new JLabel("Bienvenido...");
 
@@ -49,15 +48,6 @@ public class RegistroDiccionario extends JFrame {
         lblTitle.setFont(new Font("Gilroy-Heavy", 0, 20));
         imgFondo.add(lblTitle);
         lblTitle.setBounds(283, 45, 235, 32);
-
-        btnConectar.setBackground(new Color(0, 0, 0, 0));
-        btnConectar.setIcon(new ImageIcon(getClass().getResource("/img/Conectar.png")));
-        btnConectar.setBorder(null);
-        btnConectar.setBorderPainted(false);
-        btnConectar.setContentAreaFilled(false);
-        btnConectar.setFocusable(false);
-        imgFondo.add(btnConectar);
-        btnConectar.setBounds(626, 67, 140, 30);
 
         lblInformacion.setForeground(new Color(255, 255, 255));
         lblInformacion.setFont(new Font("Gilroy-Medium", 0, 16));
@@ -95,7 +85,7 @@ public class RegistroDiccionario extends JFrame {
         lblMenssagge.setForeground(new Color(255, 255, 255));
         lblMenssagge.setFont(new Font("Gilroy-Medium", 0, 15));
         imgFondo.add(lblMenssagge);
-        lblMenssagge.setBounds(10, 432, 250, 18);
+        lblMenssagge.setBounds(10, 432, 300, 18);
 
 
         this.getContentPane().add(imgFondo);
@@ -132,19 +122,25 @@ public class RegistroDiccionario extends JFrame {
             @Override
             public void onComplete(DatabaseError error, DatabaseReference ref) {
                 System.out.println("Finish");
+                limpiarTextField();
+                lblMenssagge.setText("Informacion Agregada");
             }
         });
         
+    }
+
+    private void limpiarTextField() {
+        txtPalabra.setText("");
+        txtSignificado.setText("");
     }
 
 
     // Variable Declaration
     JLabel imgFondo;
     JLabel lblTitle;
-    JButton btnConectar;
     JLabel lblInformacion;
     JTextField txtPalabra;
-    JTextArea txtSignificado;
+    JTextField txtSignificado;
     TextPlace txtPlace;
     JButton btnEnviar;
     JLabel lblMenssagge;
