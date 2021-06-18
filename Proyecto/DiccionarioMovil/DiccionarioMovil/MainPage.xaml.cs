@@ -40,5 +40,12 @@ namespace DiccionarioMovil
 
         }
 
+        async private void RefreshView_Refreshing(object sender, EventArgs e)
+        {
+            await Task.Delay(500);
+            GetListofDictionary();
+            MyList.IsRefreshing = false;
+        }
+
     }
 }
