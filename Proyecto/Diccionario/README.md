@@ -2,6 +2,8 @@
 
 Esta parte del proyecto es la encargada de agregar informacion 
 a la base de datos, es decir la Palabra y Significado.
+La conexion a la base de datos necesito de librerias externas, en este caso
+fueran descargadas mediante las dependencia de Gradle
 
 # Model
 ## Diccionario
