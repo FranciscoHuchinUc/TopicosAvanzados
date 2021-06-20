@@ -20,11 +20,19 @@ Esta clase es la encargada de hacer la conexion a la base de datos, al igual que
 
 Esta es la carpeta encargada de adminitrar las fuentes utilizadas en la parte visual de la aplicacion
 
+<<<<<<< HEAD
 ## App.xaml
 
 Esta agregado los recursos tipo Binding para este caso el uso de la fuentes personalizadas
 
 ## MainPage
+=======
+# App.xaml
+
+Esta agregado los recursos tipo Binding para este caso el uso de la fuentes personalizadas
+
+# MainPage
+>>>>>>> 34e4781cfcbcaaebe88db24776983f4f16ecfdee
 
 En la parte visual simlemente usarmos una StackLayout junto a un Listview para mostar en una lista diccionario los datos de la base de datos
 
