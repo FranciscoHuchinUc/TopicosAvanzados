@@ -167,7 +167,7 @@ public class Game {
 
     // 
     public static void startGame() {
-        String cmd; // momandandos que el usuario ingresara
+        String cmd;
 
         Scanner in = new Scanner(System.in);
 
@@ -217,7 +217,6 @@ public class Game {
 
                     // hasta que la entrada del jugador sea correcta;
                     while (true) {
-                        // Obtener la opinión de los jugadores
                         System.out.println("cell (Format: number letter e.q: a5):");
                         String cell = in.nextLine().toLowerCase();
 
