@@ -2,21 +2,21 @@ package model;
 
 public class Cell {
 
-    public int row, col; // coordinates
-    private BattleShip battleShip; // the battleship that stored in the cell
+    public int row, col; // coordenadas
+    private BattleShip battleShip; // el battleship que se almacena en la celda
 
-    // initizalizing the coordinates
+    // inicializa las cordenasdas en el constructor
     public Cell(int row, int col) {
         this.row = row;
         this.col = col;
     }
 
-    // returns if there a battleship in the cell
+    // devuelve si hay un battleship en la celda
     public boolean hasBattleShip() {
         return battleShip != null;
     }
 
-    // removes the battleship from thec ell
+    // remueve el battleship de la celda
     public void removeBattleShip() {
         battleShip = null;
     }
