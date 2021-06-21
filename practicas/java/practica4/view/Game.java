@@ -169,7 +169,6 @@ public class Game {
     public static void startGame() {
         String cmd; // momandandos que el usuario ingresara
 
-        // Scanner
         Scanner in = new Scanner(System.in);
 
         Random rand = new Random();
@@ -180,7 +179,7 @@ public class Game {
         // Inicialización del grid del enemigo
         PlayGrid enemyGrid = new PlayGrid(10 * 32, 0, false);
 
-        // permanecer en el juego hasta que el jugador no salga
+        // Permanecer en el juego hasta que el jugador no salga
         while (true) {
 
             System.out.println("\n         BattleShips          \n");
@@ -247,29 +246,29 @@ public class Game {
                     // hacer un retraso entre los turnos del jugador y del enemigo
                     Thread.sleep(300);
 
-                    // enemy's turn (AI):
+                    // turno del enemigo (IA):
 
-                    // if there are any clues about ships, search for them, else find random cell
+                    // si hay pistas sobre los barcos, las busca, si no, encuentra una celda al azar
                     Cell cell = queue.isEmpty()
                             ? avalibleCellsToGuessEnemy.get(rand.nextInt(avalibleCellsToGuessEnemy.size()))
                             : queue.pop();
 
                     System.out.println("Enemy: " + ((char) (cell.row + 'a')) + "".toUpperCase() + cell.col);
 
-                    // removing from avalible cells
+                    // eliminar de las celdas disponibles
                     avalibleCellsToGuessEnemy.remove(cell);
 
                     BattleShip b = cell.getBattleShip();
                     boolean hit = playerGrid.guess(cell.row, cell.col);
 
-                    // if bot hit the ship
+                    // si el bot golpea el barco
                     if (hit) {
 
-                        // look for nearby cells
+                        // buscar celdas cercanas
                         for (int r = cell.row - 1; r <= cell.row + 1; r++) {
                             for (int c = cell.col - 1; c <= cell.col + 1; c++) {
 
-                                // avoiding index out of bounds
+                                // evitar el índice fuera de los límites
                                 if (r < 0 || r >= PlayGrid.GRID_SIZE)
                                     continue;
                                 if (c < 0 || c >= PlayGrid.GRID_SIZE)
@@ -278,7 +277,7 @@ public class Game {
                                 if (c == cell.col && r == cell.row)
                                     continue;
 
-                                // ignore diagoal cells and remove them from avalible list
+                                // ignorar las celdas diarias y eliminarlas de la lista de disponibles
                                 if (r != cell.row && c != cell.col) {
                                     queue.remove(playerGrid.getArrGrid()[r][c]);
                                     avalibleCellsToGuessEnemy.remove(playerGrid.getArrGrid()[r][c]);
@@ -288,37 +287,37 @@ public class Game {
                                 if (!avalibleCellsToGuessEnemy.contains(playerGrid.getArrGrid()[r][c]))
                                     continue;
 
-                                // add remaing cells to queue
+                                // añadir las celdas restantes a la cola
                                 queue.add(playerGrid.getArrGrid()[r][c]);
                             }
                         }
                     }
                     if (hit && b != null && b.completlyDestroied()) {
-                        // if the ship destroyed, remove queue from avalible list and clear it
+                        // si el barco se destruye, eliminar la cola de la lista de disponibles y borrarla
                         avalibleCellsToGuessEnemy.removeAll(queue);
                         queue.clear();
                     }
 
                 } catch (Exception e) {
-                    // Handling wrong input
+                    // Manejo de entradas erróneas
                     System.out.println("Worng input, please try again");
                 }
             }
 
-            // End game.
-            System.out.println("Game over!");
+            // Fin del Juego
+            System.out.println("¡Se acabó el juego!");
             if (playerGrid.isBoardEmptyFromShips()) {
                 endGame(enemyGrid.getGrid(), playerGrid.getGrid());
-                System.out.println("You lost!!");
+                System.out.println("Has perdido!!");
             } else {
                 endGame(playerGrid.getGrid(), enemyGrid.getGrid());
-                System.out.println("You won!!");
+                System.out.println("Has Ganado!!");
             }
 
         }
     }
 
-    // painting the boards
+    // pinta las tablas
     public static void endGame(Grid winner, Grid looser) {
 
         Random rnd = new Random();
