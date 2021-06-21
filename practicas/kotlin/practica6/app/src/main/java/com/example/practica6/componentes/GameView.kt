@@ -1,17 +1,13 @@
 package com.example.practica6.componentes
 
-import android.app.AlertDialog
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Rect
-import android.graphics.drawable.ColorDrawable
 import android.util.Log
 import android.view.MotionEvent
 import android.view.SurfaceHolder
 import android.view.SurfaceView
-import androidx.appcompat.app.AppCompatActivity
-import com.example.practica6.R
 import com.example.practica6.interfaz.GameLoop
 
 class GameView(context: Context?) : SurfaceView(context), SurfaceHolder.Callback, Runnable, GameLoop {
@@ -40,7 +36,7 @@ class GameView(context: Context?) : SurfaceView(context), SurfaceHolder.Callback
     }
 
     private fun setup(vsAI: Boolean = true) {
-        game = Game(this.context, vsAI, bounds)
+        game = Game(this.context, bounds)
     }
 
     fun start() {
