@@ -2,10 +2,9 @@ package model;
 
 public class BattleShip {
 
-    private int partsLeft; // el tamaño del barco, cuánto queda de ella
+    private int partsLeft; // el tamaño del barco, cuánto queda de el
     private Cell[] cells; // las casillas en las que se encuentra el barco
-    private int index = 0; // el índice que apunta al último valor de las celdas, se incrementa cada
-                           // tiempo
+    private int index = 0; // el índice que apunta al último valor de las celdas, se incrementa cada tiempo
 
     public BattleShip(int size) {
         partsLeft = size;

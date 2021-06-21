@@ -68,33 +68,25 @@ public class PlayGrid {
 
         if (checked.contains(arrGrid[row][col]))
             return false;
-
         checked.add(arrGrid[row][col]);
 
         if (arrGrid[row][col].hasBattleShip()) {
 
             BattleShip tmp = arrGrid[row][col].getBattleShip();
-
             tmp.destory();
-
             grid.setCellColor(GRID_SIZE - (row + 1), col + 1, Color.ORANGE);
 
             if (tmp.completlyDestroied()) {
-
                 for (Cell c : tmp.getCells()) {
                     grid.setCellColor(GRID_SIZE - (c.row + 1), c.col + 1, Color.red);
                 }
-
                 battleShipsLeft -= 1;
             }
-
             arrGrid[row][col].removeBattleShip();
-
             return true;
         }
 
         grid.setCellColor(GRID_SIZE - (row + 1), col + 1, Color.gray);
-
         return false;
     }
 
@@ -106,7 +98,6 @@ public class PlayGrid {
         clearGrid();
 
         Random rnd = new Random();
-
         int[] sizes = { 1, 2, 3, 4 };
 
         for (int size : sizes) {
@@ -114,7 +105,6 @@ public class PlayGrid {
             for (int i = size; i > 0; i--) {
 
                 visited = new LinkedList<>();
-
                 int rndRow = rnd.nextInt(GRID_SIZE);
                 int rndCol = rnd.nextInt(GRID_SIZE);
 
@@ -179,7 +169,6 @@ public class PlayGrid {
             for (int r = row; r < row + size; r++) {
 
                 arrGrid[r][col].setBattleShip(s);
-
                 s.addCell(arrGrid[r][col]);
 
                 if (show) {
@@ -193,7 +182,6 @@ public class PlayGrid {
             for (int c = col; c < col + size; c++) {
 
                 arrGrid[row][c].setBattleShip(s);
-
                 s.addCell(arrGrid[row][c]);
 
                 if (show) {
@@ -217,18 +205,13 @@ public class PlayGrid {
 
                 if (r < 0 || r >= GRID_SIZE)
                     return false;
-
                 for (int c = col - 1; c <= col + 1; c++) {
-
                     if (c < 0 || c >= GRID_SIZE)
                         continue;
-
                     if (arrGrid[r][c].hasBattleShip()) {
                         return false;
                     }
-
                 }
-
             }
             return true;
         }
@@ -237,18 +220,13 @@ public class PlayGrid {
 
             if (c < 0 || c >= GRID_SIZE)
                 return false;
-
             for (int r = row - 1; r <= row + 1; r++) {
-
                 if (r < 0 || r >= GRID_SIZE)
                     continue;
-
                 if (arrGrid[r][c].hasBattleShip())
                     return false;
             }
-
         }
-
         return true;
     }
 
